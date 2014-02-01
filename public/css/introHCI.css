@@ -21,6 +21,10 @@
      color: #6e6e6e;
 }
 
+html, body {
+     margin: 0;
+     width:800px;
+ }
 
 /*.connectedSortable .ui-state-highlight {
      background: blue
