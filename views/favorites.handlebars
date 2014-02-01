@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Edit Favorites</title>
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="css/introHCI.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <style>
+  #sortable1, #sortable2 { list-style-type: none; margin: 0; 
+  	padding: 0 0 2.5em; float: left; margin-right: 10px;
+  	border: 5px solid black; }
+  #sortable1 li, #sortable2 li { margin: 5px 5px 0px 5px; padding: 5px; font-size: 1.2em; width: 150px; }
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+
+  	$('#sortable2').on('DOMNodeInserted', function(e) {
+  		var list = $('#sortable2 .ui-state-default');
+  		console.log(list.length);
+  		list.each(function( index ) {
+  			$( this ).addClass( "ui-state-highlight" );
+  			$( this ).removeClass( "ui-state-default" );
+  			$( this ).append( " <i class=\"glyphicon glyphicon-star\"></i>" );
+		});
+	});
+
+	$('#sortable1').on('DOMNodeInserted', function(e) {
+  		var list = $('#sortable1 .ui-state-highlight');
+  		console.log(list.length);
+  		list.each(function() {
+  			$( this ).addClass( "ui-state-default" );
+  			$( this ).removeClass( "ui-state-highlight" );
+  			$( this ).children().last().remove();
+		});
+	});
+  });
+
+
+
+  </script>
+</head>
+<body style = "margin: 40px">
+<div> 
+<ul id="sortable1" class="connectedSortable">
+  {{#each unselected}}
+  <li class="ui-state-default"><span>::  </span>{{name}}</li>
+  {{/each}}
+</ul>
+</div>
+ 
+<ul id="sortable2" class="connectedSortable ">
+  {{#each favorites}}
+  <li class="ui-state-highlight"><span>::  </span>{{name}} <i class="glyphicon glyphicon-star"></i></li>
+  {{/each}}
+</ul>
+ 
+ 
+</body>
+</html>
+
+
+
