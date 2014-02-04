@@ -32,5 +32,22 @@ html, body {
      float: left; width: 95%; }
 
 .btn-text {
-     font-size: 32px;
+     font-size: 36px;
+     margin: 5px;
 }
+
+#home-alerts {
+    width: 60%;
+}
+
+#home-alerts .alert {
+    margin: 25px;
+    height: 200px;
+    text-align: center;
+    vertical-align: center;
+}
+
+#home-alerts .alert h2 {
+    margin-top: 50px;
+}
+
