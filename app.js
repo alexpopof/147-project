@@ -13,6 +13,8 @@ var index = require('./routes/index');
 var favorites = require('./routes/favorites');
 
 var categories = require('./routes/categories');
+
+var alers = require('./routes/alerts');
 // Example route
 // var user = require('./routes/user');
 
