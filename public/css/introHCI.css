@@ -26,6 +26,13 @@ html, body {
      width:800px;
  }
 
-/*.connectedSortable .ui-state-highlight {
-     background: blue
-}*/
+  #sortable1, #sortable2 { list-style-type: none; margin: 0; 
+     padding: 0 0 5px; float: left; margin-right: 20px;
+     border: 5px solid black; width: 100%; }
+  #sortable2 {float: right;}
+  #sortable1 li, #sortable2 li { margin: 10px 5px 5px 10px; padding: 15px; font-size: 32px; 
+     float: left; width: 95%; }
+
+.btn-text {
+     font-size: 32px;
+}
