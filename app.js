@@ -47,6 +47,8 @@ app.get('/favorites/:category', favorites.view);
 
 app.get('/categories', categories.view);
 
+app.get('/alerts', alerts.view);
+
 // Example route
 // app.get('/users', user.list);
 
