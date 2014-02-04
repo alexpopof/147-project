@@ -7,11 +7,11 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="css/introHCI.css">
+  <link rel="stylesheet" href="/css/introHCI.css">
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <script src="js/jquery.ui.touch-punch.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/jquery.ui.touch-punch.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   
   <style>
   #sortable1, #sortable2 { list-style-type: none; margin: 0; 
@@ -53,27 +53,31 @@
   </script>
 </head>
 <body style = "margin: 40px;">
-<div style="width: 100% float left; margin: 10px;"> 
-	<a href="/favorites" class="btn btn-info"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
-	<a href="/" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Home</a>  
-</div>
+<div class = "container">
+	<div style="width: 100% float left; margin: 20px;"> 
+		<a href="/categories" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+		<a href="/" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-home"></i> Home</a>  
+	</div>
 
-<div style="width: 100% float left; text-align: center;
-vertical-align: middle; font-size: 48px; margin: 10px;"> Edit Favorites </div>
+	<div style="width: 100% float left; text-align: center;
+	vertical-align: middle; font-size: 48px; margin: 10px;"> Edit Favorites: {{category}} </div>
 
-<div style="width: 45%; float:left;"> 
-	<ul id="sortable1" class="connectedSortable">
-	  {{#each unselected}}
-	  <li class="ui-state-default"><span>::  </span>{{name}}</li>
-	  {{/each}}
-	</ul>
-</div>
-<div style="width: 45%; float:right;"> 
-	<ul id="sortable2" class="connectedSortable ">
-	  {{#each favorites}}
-	  <li class="ui-state-highlight"><span>::  </span>{{name}} <i class="glyphicon glyphicon-star"></i></li>
-	  {{/each}}
-	</ul>
+	<div style="width: 45%; float:left;"> 
+		<ul id="sortable1" class="connectedSortable">
+		  {{#each unselected}}
+		  <li class="ui-state-default"><span>::  </span>{{name}}</li>
+		  {{/each}}
+		</ul>
+	</div>
+	<div style="width: 45%; float:right;"> 
+		<ul id="sortable2" class="connectedSortable ">
+		  {{#each favorites}}
+		  <li class="ui-state-highlight">
+		  	<span>::  </span>{{name}} <i class="glyphicon {{glyphicon-star}}"></i>
+		  </li>
+		  {{/each}}
+		</ul>
+	</div>
 </div>
  
  

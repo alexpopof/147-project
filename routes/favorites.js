@@ -1,5 +1,11 @@
 exports.view = function(req, res) {
   // controller code goes here
+  var category = req.params.category;
+  var cap = function capitaliseFirstLetter(string)
+  {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  category = cap(category);
     res.render('favorites', {
     'unselected':
     [
@@ -26,7 +32,8 @@ exports.view = function(req, res) {
       },
       { 'name': 'Favorite #5', 
       }
-    ]  
+    ],
+    'category': category
    
   });
 

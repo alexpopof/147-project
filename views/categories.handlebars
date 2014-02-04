@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Edit Favorites</title>
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="/css/introHCI.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="/js/jquery.ui.touch-punch.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  
+ 
+</head>
+<body style = "margin: 40px;">
+<div class = "container">
+	<div style="width: 100% float left; margin: 20px;"> 
+		<a href="/" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-home"></i> Home</a>  
+	</div>
+
+	<div style="width: 100% float left; text-align: center;
+	vertical-align: middle; font-size: 48px; margin: 10px;"> Favorites: Select a Category </div>
+  {{#each cats}}
+    <div style="width: 100% float left; text-align: center;
+       vertical-align: middle; font-size: 48px; margin: 10px;">
+      <a href="/favorites/{{name_lower}}" class="btn btn-info btn-lg">
+        <i class="glyphicon {{icon}}"></i>&nbsp; &nbsp;{{name}}
+      </a>
+    </div>
+  {{/each}} 
+
+
+</div>
+ 
+ 
+</body>
+</html>
+
+
+
