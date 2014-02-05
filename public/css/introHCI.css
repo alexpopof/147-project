@@ -44,6 +44,10 @@ html, body {
     height: 200px;
     text-align: center;
     vertical-align: center;
+        /*background-image: linear-gradient(to bottom,#A30505 0,#920202 100%);
+        text-shadow: 0 -1px 0 #000000;
+        border-color: #FFFFFF;
+        How to change background color, this code turns it red*/
 }
 
 #home-alerts .alert h2 {
@@ -53,4 +57,12 @@ html, body {
 .btn-home {
     float:right;
 }
+
+/*.btn-info {
+background-image: linear-gradient(to bottom,#FFFFFF 0,#000000 100%);
+background-repeat: repeat-x;
+border-color: #080809;
+}
+This code turns the light blue buttons some other color
+*/
 
