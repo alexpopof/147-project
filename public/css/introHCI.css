@@ -42,15 +42,33 @@ html, body {
 #home-alerts .alert {
     margin: 25px;
     height: 200px;
+    width: 80%;
     text-align: center;
     vertical-align: center;
 }
 
-#home-alerts .alert h2 {
-    margin-top: 50px;
+#home-alerts .alert-venue {
+    margin-top: 25px;
+    font-size: 40px;
 }
 
+#home-alerts .alert-subtitle {
+    margin-top: 15px;
+    font-size: 25px;
+}
 .btn-home {
     float:right;
+}
+
+
+.btn-yellow { 
+    border-color: yellow; 
+    background-color: yellow; 
+    background-image: linear-gradient(to bottom, rgb(255,255,86) 0px, rgb(255,255,0) 100%);
+    color: rgb(255,255,255);
+}
+
+.btn-yellow:hover {
+    color: rgb(255,255,255);
 }
 
