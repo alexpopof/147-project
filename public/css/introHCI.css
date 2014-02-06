@@ -69,11 +69,11 @@ html, body {
     border-color: yellow; 
     background-color: yellow; 
     background-image: linear-gradient(to bottom, rgb(255,255,86) 0px, rgb(255,255,0) 100%);
-    color: rgb(255,255,255);
+    color: black;
 }
 
 .btn-yellow:hover {
-    color: rgb(255,255,255);
+    color: black;
 }
 
 /*.btn-info {
