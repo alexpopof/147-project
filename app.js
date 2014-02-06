@@ -15,6 +15,8 @@ var favorites = require('./routes/favorites');
 var categories = require('./routes/categories');
 
 var alerts = require('./routes/alerts');
+
+var addalerts = require('./routes/addalerts');
 // Example route
 // var user = require('./routes/user');
 
@@ -48,6 +50,8 @@ app.get('/favorites/:category', favorites.view);
 app.get('/categories', categories.view);
 
 app.get('/alerts', alerts.view);
+
+app.get('/addalerts', addalerts.view);
 
 // Example route
 // app.get('/users', user.list);
