@@ -36,7 +36,8 @@ html, body {
 }
 
 #home-alerts {
-    width: 60%;
+    width: 80%;
+    text-align: center;
 }
 
 #home-alerts .alert {
@@ -54,6 +55,7 @@ html, body {
 #home-alerts .alert-venue {
     margin-top: 25px;
     font-size: 40px;
+    
 }
 
 #home-alerts .alert-subtitle {
