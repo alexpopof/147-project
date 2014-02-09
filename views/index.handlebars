@@ -31,26 +31,19 @@
 			<p style = 'font-size: 20px;'>"make businesses accountable"</p>
 		</div>
 		<div class="col-sm-4" align="center" style="width: 100%; float left; margin: 20px;">
-			<div class="list-group" align="center" id="home-alerts">
-				<a href="/alerts" class="btn btn-warning alert">
-					<div class = 'alert-venue'>Panda Express</div>
-					<div class = 'alert-subtitle'>"Out of Orange Chicken"</div>
+			<div class="list-group" align="center" id="home-alerts">				
+				{{#each alerts}}
+				<a href="/alerts" class="btn btn-{{severity}} alert">
+					<div class = 'alert-venue'>{{venue}}</div>
+					<div class = 'alert-subtitle'>"{{alert}}"</div>
 				</a>
-				<a href="/alerts" class="btn btn-danger alert">
-					<div class = 'alert-venue'>Subway</div>
-					<div class = 'alert-subtitle'>"Ants!"</div>
-				</a>
-				
-				<a href="/alerts" class="btn btn-info alert">
-					<div class = 'alert-venue'>Starbucks</div>
-					<div class = 'alert-subtitle'>"Line too long, understaffed"</div>
-				</a>
-				
+				{{/each}}
 
 			</div>
 			<a href="/addalerts" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add An Alert</a>
 
 			<a href="/categories" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-star"></i> Edit Favorites</a>
+
 		</div>
 		
 

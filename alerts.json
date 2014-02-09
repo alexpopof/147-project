@@ -1,0 +1,19 @@
+[
+		{
+			"venue": "Panda Express",
+			"alert": "Out of Orange Chicken",
+			"severity": "warning"
+			
+		},
+		{
+			"venue": "Subway",
+			"alert": "Ants",
+			"severity": "danger"
+					
+		},
+		{
+			"venue": "Starbucks",
+			"alert": "Holiday Menu",
+			"severity": "primary"					
+		}
+]
