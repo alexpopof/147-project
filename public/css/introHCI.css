@@ -35,6 +35,7 @@ html, body {
      margin: 5px;
 }
 
+
 #home-alerts {
     width: 80%;
     text-align: center;
@@ -54,8 +55,7 @@ html, body {
 
 #home-alerts .alert-venue {
     margin-top: 25px;
-    font-size: 40px;
-    
+    font-size: 40px;   
 }
 
 #home-alerts .alert-subtitle {
@@ -77,6 +77,8 @@ html, body {
 .btn-yellow:hover {
     color: black;
 }
+
+
 
 /*.btn-info {
 background-image: linear-gradient(to bottom,#FFFFFF 0,#000000 100%);
