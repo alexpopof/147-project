@@ -98,8 +98,11 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script>		
-		$("#select-venue").val('{{venue}}');
+	<script>
+		console.log('{{venue}}');
+		var venue = '{{venue}}';
+		if (venue != '')
+			$("#select-venue").val('{{venue}}');
 	</script>
 </body>
 </html>
