@@ -12,7 +12,7 @@
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="/js/jquery.ui.touch-punch.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  
+  <script src="/js/introHCI.js"></script>  
   
   <script>
   $(function() {
@@ -52,9 +52,11 @@
 	</div>
 
 	<div style="width: 100% float left; text-align: center;
-	vertical-align: middle; font-size: 48px; margin: 10px;"> Edit Favorites: {{category}} </div>
-
+	vertical-align: middle; font-size: 48px; margin: 10px; margin-bottom: 15px;"> Edit Favorites: {{category}} </div>
+  <div style="width: 100% float left; text-align: center;
+  vertical-align: middle; font-size: 24px; margin: 10px; margin-bottom: 35px;"> Drag and Drop to Edit </div>
 	<div style="width: 45%; float:left;"> 
+    <h2 style="width: 100%; float:left;">&nbsp; Available Venues</h2>
 		<ul id="sortable1" class="connectedSortable">
 		  {{#each unselected}}
 		  <li class="ui-state-default"><span>::  </span>{{name}}</li>
@@ -62,6 +64,7 @@
 		</ul>
 	</div>
 	<div style="width: 45%; float:right;"> 
+    <h2 style="width: 100%; float:left;">Favorites</h2>
 		<ul id="sortable2" class="connectedSortable ">
 		  {{#each favorites}}
 		  <li class="ui-state-highlight">
@@ -70,6 +73,9 @@
 		  {{/each}}
 		</ul>
 	</div>
+  <h2 style="width: 95%; float:right; margin-top: 40px;">Debugging...will likely be a hidden form when we sync to DB</h2>
+  <h2 id="faves_list" style="width: 95%; float:right;">Click here to update faves below</h2>
+  <h2 id="faves_list2" style="width: 95%; float:right;">...</h2>
 </div>
  
  

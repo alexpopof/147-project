@@ -3,16 +3,25 @@
 			"name": "Gott's",
 			"description": "Burgers and Brew",
 			"imageURL": "",
-			"address": ""
+			"address": "",
+			"favorited": true
 		},
 		{
 			"name": "Subway",
 			"description": "Eat fresh",
-			"imageURL": ""			
+			"imageURL": "",
+			"favorited": true			
 		},
 		{
 			"name": "Jimmy V's",
 			"description": "Teams that eat together, play together, win together",
-			"imageURL": ""			
+			"imageURL": "",
+			"favorited": false
+		},
+		{
+			"name": "Panda Express",
+			"description": "Asian finest.",
+			"imageURL": "",
+			"favorited": true
 		}
 ]

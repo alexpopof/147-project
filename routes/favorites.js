@@ -1,3 +1,8 @@
+var food = require('../food_venues.json');
+var workout = require('../athletics_venues.json');
+var party = require('../party_venues.json');
+
+
 exports.view = function(req, res) {
   // controller code goes here
   var category = req.params.category;
@@ -5,34 +10,33 @@ exports.view = function(req, res) {
   {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+  var data;
+  if (category == "food") {
+    data = food;
+  }
+  if (category == "workout") {
+    data = workout;
+  }
+  if (category == "party") {
+    data = party;
+  }
+  //console.log(data);
+  unselected = [];
+  favorited = [];
+  for (var i = 0; i<data.length; i++) {
+    var ven_name = data[i]['name'];
+    var favorited_bool = data[i]['favorited'];
+    if (favorited_bool)
+      favorited.push(data[i]);
+    else
+      unselected.push(data[i]);
+  }
+
   category = cap(category);
+
     res.render('favorites', {
-    'unselected':
-    [
-      { 'name': 'Option #1',
-      },
-      { 'name': 'Option #2',
-      },
-      { 'name': 'Option #3',        
-      },
-      { 'name': 'Option #4',        
-      },     
-      { 'name': 'Option #5',        
-      }
-    ],
-    'favorites':
-    [
-      { 'name': 'Favorite #1',         
-      },
-      { 'name': 'Favorite #2', 
-      },
-      { 'name': 'Favorite #3', 
-      },      
-      { 'name': 'Favorite #4', 
-      },
-      { 'name': 'Favorite #5', 
-      }
-    ],
+    'unselected': unselected,
+    'favorites': favorited,
     'category': category
    
   });
