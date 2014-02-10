@@ -19,6 +19,11 @@ function alertFormListener() {
 		alert("You must select a severity.\nChoose by clicking one of the four colored buttons.");
 		return false;
 	}
+	var selected = $('#select-venue').find(":selected").val();
+	if (selected == 'default') {
+		alert("You must choose a venue from the dropdown.  This is the first item in the form.")
+		return false;	
+	}
 }
 
 function getFavoritesFromSortable2() {

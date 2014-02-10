@@ -51,9 +51,10 @@ app.get('/favorites/:category', favorites.view);
 app.get('/categories', categories.view);
 app.post('/categories', categories.view);
 
-app.get('/alerts', alerts.view);
+app.get('/alerts/:venue', alerts.view);
 
 app.get('/addalerts', addalerts.view);
+app.get('/addalerts/:venue', addalerts.view);
 
 // Example route
 // app.get('/users', user.list);

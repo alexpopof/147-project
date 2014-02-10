@@ -1,3 +1,4 @@
 exports.view = function(req, res){
-  res.render('alerts');
+  var venue = req.params.venue;
+  res.render('alerts', {'venue': venue});
 };

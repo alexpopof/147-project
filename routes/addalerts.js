@@ -9,5 +9,7 @@ var venues = {
 };
 
 exports.view = function(req, res){
+  var venue = req.params.venue;
+  venues["venue"] = venue  
   res.render('addalerts', venues);
 };

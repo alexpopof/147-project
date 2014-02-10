@@ -38,22 +38,23 @@
 			<form class="bs-example bs-example-form" id="add-alert-form" role="form" method="post" action="/">
 				<div class="input-group input-group-lg" align="left">
 					<label>Venue</label><br/>
-					<select name="venue">
-					<optgroup label = "Food">
-					{{#each food_venues}}
-						<option value = "{{name}}">{{name}}</option>
-					{{/each}}
-					</optgroup>
-					<optgroup label = "Workout">
-					{{#each workout_venues}}
-						<option value = "{{name}}">{{name}}</option>
-					{{/each}}
-					</optgroup>
-					<optgroup label = "Party">
-					{{#each party_venues}}
-						<option value = "{{name}}">{{name}}</option>
-					{{/each}}
-					</optgroup>
+					<select name="venue" id="select-venue">
+						<option value = "default">Choose a venue ...</option>
+						<optgroup label = "Food">
+						{{#each food_venues}}
+							<option value = "{{name}}">{{name}}</option>
+						{{/each}}
+						</optgroup>
+						<optgroup label = "Workout">
+						{{#each workout_venues}}
+							<option value = "{{name}}">{{name}}</option>
+						{{/each}}
+						</optgroup>
+						<optgroup label = "Party">
+						{{#each party_venues}}
+							<option value = "{{name}}">{{name}}</option>
+						{{/each}}
+						</optgroup>
 					</select>
 				</div>
 				<hr/>
@@ -97,5 +98,8 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script>		
+		$("#select-venue").val('{{venue}}');
+	</script>
 </body>
 </html>
