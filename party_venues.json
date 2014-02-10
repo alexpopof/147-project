@@ -3,12 +3,14 @@
 			"name": "The Patio",
 			"description": "",
 			"imageURL": "",
-			"address": ""
+			"address": "",
+			"favorited": false
 		},
 		{
 			"name": "Old Pro",
 			"description": "",
-			"imageURL": ""			
+			"imageURL": "",
+			"favorited": true		
 		}
 
 ]

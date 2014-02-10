@@ -44,10 +44,12 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+app.post('/', index.view);
 
 app.get('/favorites/:category', favorites.view);
 
 app.get('/categories', categories.view);
+app.post('/categories', categories.view);
 
 app.get('/alerts', alerts.view);
 

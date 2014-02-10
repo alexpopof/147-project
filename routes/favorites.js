@@ -33,7 +33,6 @@ exports.view = function(req, res) {
   }
 
   category = cap(category);
-
     res.render('favorites', {
     'unselected': unselected,
     'favorites': favorited,

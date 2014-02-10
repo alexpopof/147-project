@@ -3,16 +3,19 @@
 			"name": "West Pool",
 			"description": "",
 			"imageURL": "",
-			"address": ""
+			"address": "",
+			"favorited": true
 		},
 		{
-			"name": "Arrillaga Gym (old)",
+			"name": "Arrillaga Gym",
 			"description": "",
-			"imageURL": ""			
+			"imageURL": "",
+			"favorited": false		
 		},
 		{
 			"name": "Ford Center",
 			"description": "",
-			"imageURL": ""			
+			"imageURL": "",
+			"favorited": true			
 		}
 ]

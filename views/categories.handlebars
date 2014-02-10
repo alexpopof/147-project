@@ -24,6 +24,11 @@
 
 	<div style="width: 100% float: left; text-align: center;
 	vertical-align: middle; font-size: 48px; margin: 25px;"> Favorites: Select a Category </div>
+  {{#if posted}}
+    <div class="alert alert-success" style="width: 100% float left; text-align: center;
+    vertical-align: middle; font-size: 24px; margin: 10px; margin-bottom: 35px;"
+    id="favorites-success-alert">Favorites edited successfully!</div>
+  {{/if}}
   {{#each cats}}
     <div style="width: 100% float left; text-align: center;
        vertical-align: middle; font-size: 48px; margin: 35px;">

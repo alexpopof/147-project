@@ -10,7 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$('#add-alert-form').submit(alertFormListener);
-	$('#faves_list').click(getFavoritesFromSortable2);
+	$('#faves_save').click(getFavoritesFromSortable2);
 }
 
 function alertFormListener() {
@@ -27,9 +27,11 @@ function getFavoritesFromSortable2() {
 	console.log(faves);
 	for (var i = 0; i<faves.length; i++) {
 		var str = faves[i]["innerText"].substring(3);
+		str = str.substring(0, str.length-1);
 		text = text.concat(str+'|');
 	}
+
 	console.log(text);
-	console.log($('#faves_list2').text());
-	$('#faves_list2').text(text);
+	console.log($('#faves_list').text());
+	$('#faves_list').val(text);
 }

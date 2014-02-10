@@ -55,7 +55,10 @@
 	vertical-align: middle; font-size: 48px; margin: 10px; margin-bottom: 15px;"> Edit Favorites: {{category}} </div>
   <div style="width: 100% float left; text-align: center;
   vertical-align: middle; font-size: 24px; margin: 10px; margin-bottom: 35px;"> Drag and Drop to Edit </div>
-	<div style="width: 45%; float:left;"> 
+	
+
+  <div style="width: 45%; float:left;"> 
+
     <h2 style="width: 100%; float:left;">&nbsp; Available Venues</h2>
 		<ul id="sortable1" class="connectedSortable">
 		  {{#each unselected}}
@@ -68,14 +71,18 @@
 		<ul id="sortable2" class="connectedSortable ">
 		  {{#each favorites}}
 		  <li class="ui-state-highlight">
-		  	<span>::  </span>{{name}} <i class="glyphicon glyphicon-star"></i>
+		  	<span>::  </span>{{name}}<span>&nbsp;</span><i class="glyphicon glyphicon-star"></i>
 		  </li>
 		  {{/each}}
 		</ul>
 	</div>
-  <h2 style="width: 95%; float:right; margin-top: 40px;">Debugging...will likely be a hidden form when we sync to DB</h2>
-  <h2 id="faves_list" style="width: 95%; float:right;">Click here to update faves below</h2>
-  <h2 id="faves_list2" style="width: 95%; float:right;">...</h2>
+
+  <form id="save-favorites-form" method = "post" action="/categories" style="width: 95%; float:left;">   
+    <input type="hidden" id="faves_list" style="width: 95%; float:right;" name="faves_list">
+    <input type="hidden" id="category_input" style="width: 95%; float:right;" name="category" value="{{category}}">
+    <hr/>
+    <button type="submit" id="faves_save" class="btn btn-info btn-text" style="float:right;"><i class="glyphicon glyphicon-floppy-saved"></i> Save</button>    
+  </form>
 </div>
  
  

@@ -8,9 +8,9 @@ var alerts = {'alerts': alerts_json	}
 
 exports.view = function(req, res){
 	//if we are returning to the homepage from an added alert, must process form
-	var venue = req.query.venue;
-	var description = req.query.description;
-	var severity = req.query.severity;
+	var venue = req.body.venue;
+	var description = req.body.description;
+	var severity = req.body.severity;
 	var newAlert = {
 			"venue": venue,
 			"alert": description,
