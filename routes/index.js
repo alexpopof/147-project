@@ -17,7 +17,7 @@ exports.view = function(req, res){
 			"severity": severity					
 		}
 	if (typeof venue != "undefined"){ //form posted successfully		
-		alerts["alerts"].push(newAlert);
+		alerts["alerts"].unshift(newAlert); // add to front
 	}
 	console.log(alerts);
 
