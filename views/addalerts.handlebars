@@ -30,8 +30,7 @@
 			<a href="/" class="btn btn-info btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 		</div>
 		<div align="center" style="margin-bottom: 40px;">
-			<h1 style="font-size:48px; ">Add an Alert</h1>
-			<h2>Added Sunday 2/9</h2>		
+			<h1 style="font-size:48px; ">Add an Alert</h1>	
 		</div>
 		
 		<div style="margin: 0 auto; width:70%; border:5px solid black; padding: 30px; font-size:24px;">
@@ -56,6 +55,9 @@
 						{{/each}}
 						</optgroup>
 					</select>
+					<div class="alert alert-danger" style="width: 100% float: left; text-align: center;
+    				vertical-align: middle; font-size: 24px; margin-top: 10px; display:none;"
+    				id="select-venue-dropdown-error">Error! You must select a venue.</div>
 				</div>
 				<hr/>
 
@@ -83,6 +85,9 @@
 						    <input type="radio" name="severity" value = "success" id="option4">Kudos
 						</label>
 					</div>
+					<div class="alert alert-danger" style="width: 100% float: left; text-align: center;
+    				vertical-align: middle; font-size: 24px; margin-top: 10px; display:none;"
+    				id="select-venue-severity-error">Error! You must select one of the above buttons.</div>
 				</div>
 
 				<hr/>

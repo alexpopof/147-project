@@ -23,5 +23,11 @@
 			"description": "Asian finest.",
 			"imageURL": "",
 			"favorited": true
+		},
+		{
+			"name": "Starbucks",
+			"description": "Fair-trade coffee",
+			"imageURL": "",
+			"favorited": true
 		}
 ]
