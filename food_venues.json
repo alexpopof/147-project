@@ -2,32 +2,36 @@
 		{
 			"name": "Gott's",
 			"description": "Burgers and Brew",
-			"imageURL": "",
-			"address": "",
-			"favorited": true
+			"imageURL": "public/images/Gott's.jpg",
+			"favorited": true,
+			"address": "855 El Camino Real #65, Palo Alto, California, 94301"
 		},
 		{
 			"name": "Subway",
 			"description": "Eat fresh",
-			"imageURL": "",
-			"favorited": true			
+			"imageURL": "/images/Subway.jpg",
+			"favorited": true,
+			"address": "459 Lagunita Dr #5, Stanford, CA 94305"			
 		},
 		{
 			"name": "Jimmy V's",
 			"description": "Teams that eat together, play together, win together",
-			"imageURL": "",
-			"favorited": false
+			"imageURL": "/images/Jimmy.jpg",
+			"favorited": false,
+			"address": "641 Campus Dr, Stanford, CA 94305"
 		},
 		{
 			"name": "Panda Express",
 			"description": "Asian finest.",
-			"imageURL": "",
-			"favorited": true
+			"imageURL": "/images/Panda.jpeg",
+			"favorited": true,
+			"address": "459 Lagunita Dr, Stanford, CA 94305"
 		},
 		{
 			"name": "Starbucks",
 			"description": "Fair-trade coffee",
-			"imageURL": "",
-			"favorited": true
+			"imageURL": "/images/Starbucks.jpg",
+			"favorited": true,
+			"address": "459 Lagunita Dr, Stanford, CA 94305"
 		}
 ]

@@ -2,20 +2,22 @@
 		{
 			"name": "West Pool",
 			"description": "",
-			"imageURL": "",
-			"address": "",
+			"imageURL": "/images/West_Pool",
+			"address": "235 Sam McDonald Mall, Stanford, CA 94305",
 			"favorited": true
 		},
 		{
 			"name": "Arrillaga Gym",
 			"description": "",
-			"imageURL": "",
-			"favorited": false		
+			"imageURL": "/images/Arrillaga_Gym",
+			"favorited": false,
+			"address": "341 Galvez St, Stanford, CA 94305"		
 		},
 		{
 			"name": "Ford Center",
 			"description": "",
-			"imageURL": "",
-			"favorited": true			
+			"imageURL": "/images/Ford_Center",
+			"favorited": true,
+			"address": "615 Serra St, Stanford, CA 94305"			
 		}
 ]

@@ -2,15 +2,16 @@
 		{
 			"name": "The Patio",
 			"description": "",
-			"imageURL": "",
-			"address": "",
-			"favorited": false
+			"imageURL": "images/The_Patio.jpg",
+			"favorited": false,
+			"address": "412 Emerson St, Palo Alto, CA 94301"
 		},
 		{
 			"name": "Old Pro",
 			"description": "",
-			"imageURL": "",
-			"favorited": true		
+			"imageURL": "images/Old_Pro.jpg",
+			"favorited": true,
+			"address": "541 Ramona St, Palo Alto, CA 94301"		
 		}
 
 ]
