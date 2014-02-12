@@ -33,12 +33,26 @@
 			<h1>{{venue}}</h1>
 			<img src="{{imageURL}}" class="img"/>
 			<h2>{{description}}</h2>
-
-
-
-			<h2>TODO Fredo: Venue address, map, alerts, etc. here</h2>
-			<h3>TODO Alex: Format nicely once Fredo adds elements</h3>
+			<h2>{{address}}</h2>
+			<h3>{{telephone}}</h3>
+			<h3>{{hours}}</h3>
+			<a href={{website}}>{{website}}</a>
 		</div>
+
+		
+		<div class="col-sm-4" align="center" style="width: 100%; float left; margin: 20px;">
+			<div class="list-group" align="center" id="home-alerts">				
+				{{#each specific}}
+				<a href="#" class="btn btn-{{severity}} alert">
+					<div class = 'alert-venue'>{{venue}}</div>
+					<div class = 'alert-subtitle'>"{{alert}}"</div>
+				</a>
+				{{/each}}
+
+			</div>
+		</div>
+
+
 		<a href="/addalerts/{{venue}}" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add An Alert</a>
 
 	</div>

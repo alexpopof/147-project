@@ -2,36 +2,51 @@
 		{
 			"name": "Gott's",
 			"description": "Burgers and Brew",
-			"imageURL": "public/images/Gott's.jpg",
+			"imageURL": "/images/Gotts.jpg",
 			"favorited": true,
-			"address": "855 El Camino Real #65, Palo Alto, California, 94301"
+			"address": "855 El Camino Real #65, Palo Alto, California, 94301",
+			"telephone": "(650) 326-1000",
+			"hours": "Monday - Sunday: 7:00am - 9:00pm",
+			"website": "gotts.com/"
 		},
 		{
 			"name": "Subway",
 			"description": "Eat fresh",
 			"imageURL": "/images/Subway.jpg",
 			"favorited": true,
-			"address": "459 Lagunita Dr #5, Stanford, CA 94305"			
+			"address": "459 Lagunita Dr #5, Stanford, CA 94305",
+			"telephone": "(650) 725-2098",
+			"hours": "Monday - Friday: 9:00am - 7:00pm Saturday - Sunday: 11:00am - 4:00pm",
+			"website": "https://www.subway.com/‎"			
 		},
 		{
 			"name": "Jimmy V's",
 			"description": "Teams that eat together, play together, win together",
 			"imageURL": "/images/Jimmy.jpg",
 			"favorited": false,
-			"address": "641 Campus Dr, Stanford, CA 94305"
+			"address": "641 Campus Dr, Stanford, CA 94305",
+			"telephone": "(650) 724-6465",
+			"hours": "Monday - Friday: 7:00am - 4:00pm",
+			"website": "https://www.facebook.com/pages/Jimmy-Vs-Sports-Cafe/123803080731"
 		},
 		{
 			"name": "Panda Express",
 			"description": "Asian finest.",
 			"imageURL": "/images/Panda.jpeg",
 			"favorited": true,
-			"address": "459 Lagunita Dr, Stanford, CA 94305"
+			"address": "459 Lagunita Dr, Stanford, CA 94305",
+			"telephone": "(650) 330-1906",
+			"hours": "Monday - Friday: 10:00am - 9:00pm Saturday - Sunday: 10:00am - 8:00pm",
+			"website": "https://www.pandaexpress.com/‎"
 		},
 		{
 			"name": "Starbucks",
 			"description": "Fair-trade coffee",
 			"imageURL": "/images/Starbucks.jpg",
 			"favorited": true,
-			"address": "459 Lagunita Dr, Stanford, CA 94305"
+			"address": "459 Lagunita Dr, Stanford, CA 94305",
+			"telephone": "(650) 330-1906",
+			"hours": "Monday - Friday: 6:30am - 11:00pm Saturday:  7:00am - 9:00pm Sunday: 7:00am - 10:00pm",
+			"website": "https://www.starbucks.com/‎"
 		}
 ]

@@ -15,5 +15,10 @@
 			"venue": "Starbucks",
 			"alert": "Holiday Menu",
 			"severity": "primary"					
+		},
+		{
+			"venue": "Starbucks",
+			"alert": "Out of Caffeine",
+			"severity": "danger"					
 		}
 ]
