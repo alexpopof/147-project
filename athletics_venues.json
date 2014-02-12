@@ -7,7 +7,9 @@
 			"address": "235 Sam McDonald Mall, Stanford, CA 94305",
 			"telephone": "(650) 326-1000",
 			"hours": "Monday - Sunday: 7:00am - 9:00pm",
-			"website": "gotts.com/"	
+			"website": "gotts.com/",
+			"latitude": "37.43145",
+			"longitude": "-122.16213"	
 		},
 		{
 			"name": "Arrillaga Gym",
@@ -17,7 +19,9 @@
 			"address": "341 Galvez St, Stanford, CA 94305",
 			"telephone": "(650) 724-9872",
 			"hours": "Monday - Thursday: 6:00am - 12:00pm Friday: 6:00am - 12:00pm Saturday: 9:00am - 8:00pm Sunday: 9:00am - 12:00am",
-			"website": "http://cardinalrec.stanford.edu/"		
+			"website": "http://cardinalrec.stanford.edu/",
+			"latitude": "37.42956",
+			"longitude": "-122.16408"		
 		},
 		{
 			"name": "Ford Center",
@@ -27,6 +31,8 @@
 			"address": "615 Serra St, Stanford, CA 94305",
 			"telephone": "",
 			"hours": "Monday - Thursday: 6:00am - 11:00pm Friday: 6:00am - 10:00pm Saturday: 9:00am - 7:00pm Sunday: 9:00am - 11:00pm",
-			"website": "http://www.gostanford.com/ViewArticle.dbml?DB_OEM_ID=30600&ATCLID=208446884"			
+			"website": "http://www.gostanford.com/ViewArticle.dbml?DB_OEM_ID=30600&ATCLID=208446884",
+			"latitude": "37.42801",
+			"longitude": "-122.16448"			
 		}
 ]

@@ -15,6 +15,8 @@ exports.view = function(req, res){
   	var description; // venue description
   	var imageURL;
   	var address;
+    var latitude;
+    var longitude;
   	for (var i = 0; i<all_venues.length; i++) {
 		var ven_info = all_venues[i];
 		if (ven_info["name"] == venue_param) {
@@ -25,6 +27,8 @@ exports.view = function(req, res){
       telephone = ven_info["telephone"]
       hours = ven_info["hours"]
       website = ven_info["website"]
+      latitude = ven_info["latitude"]
+      longitude = ven_info["longitude"]
 		}
 			
 	}
@@ -36,8 +40,6 @@ exports.view = function(req, res){
       var alert_info = alerts_json[j];
       if (alert_info["venue"] == venue_param) {
         venue_specific_alerts.push(alerts_json[j]);
-        // severity = alert_info["severity"];
-        // alert_message = alert_info["alert"];
       }
     }
 
@@ -50,9 +52,9 @@ exports.view = function(req, res){
       'telephone': telephone,
       'hours': hours,
       'website': website,
-      'specific': venue_specific_alerts
-      // 'severity': severity,
-      // 'alert': alert_message
+      'specific_alert': venue_specific_alerts,
+      'latitude': latitude,
+      'longitude': longitude
   	});
 	
 };

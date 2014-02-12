@@ -7,7 +7,9 @@
 			"address": "412 Emerson St, Palo Alto, CA 94301",
 			"telephone": "(650) 322-2575",
 			"hours": "Monday - Friday: 11:30am - 2:00am Saturday - Sunday: 9:00am - 2:00am",
-			"website": "http://www.thepatiopa.com/"
+			"website": "http://www.thepatiopa.com/",
+			"latitude": "37.44506",
+			"longitude": "-122.16395"
 		},
 		{
 			"name": "Old Pro",
@@ -17,7 +19,9 @@
 			"address": "541 Ramona St, Palo Alto, CA 94301",
 			"telephone": "(650) 326-1446",
 			"hours": "Monday: 4:00pm - 12:00am Tuesday - Saturday: 11:00am - 2:00am Sunday 11:00am - 12:00am",
-			"website": "http://oldpropa.com/"		
+			"website": "http://oldpropa.com/",
+			"latitude": "37.44494",
+			"longitude": "-122.16119"		
 		}
 
 ]
