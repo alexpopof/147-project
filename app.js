@@ -17,8 +17,8 @@ var categories = require('./routes/categories');
 var alerts = require('./routes/alerts');
 
 var addalerts = require('./routes/addalerts');
-// Example route
-// var user = require('./routes/user');
+
+var venues = require('./routes/venues');
 
 var app = express();
 
@@ -51,10 +51,14 @@ app.get('/favorites/:category', favorites.view);
 app.get('/categories', categories.view);
 app.post('/categories', categories.view);
 
+app.get('/categories/:explore', categories.view)
+
 app.get('/alerts/:venue', alerts.view);
 
 app.get('/addalerts', addalerts.view);
 app.get('/addalerts/:venue', addalerts.view);
+
+app.get('/venues/:category', venues.view);
 
 // Example route
 // app.get('/users', user.list);

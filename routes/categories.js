@@ -9,6 +9,9 @@ function include(arr,obj) {
 exports.view = function(req, res){
   	cats_list = ['Food', 'Workout', 'Party']
 
+  	var explored_param = req.params.explore;
+  	var explore = typeof explored_param != "undefined"
+
   	// check if just posted form in "edit favorites"
   	var faves = req.body.faves_list;
 	var posted = false;
@@ -29,8 +32,7 @@ exports.view = function(req, res){
 		console.log(faves_list);
 		for (var i = 0; i<data.length; i++) {
 			var venue_name = data[i]["name"]
-			//console.log(data[i]["name"]);
-			//console.log(include(faves_list, venue_name));
+
 			if (include(faves_list, venue_name))
 				data[i]["favorited"] = true;
 			else
@@ -43,11 +45,12 @@ exports.view = function(req, res){
 
   	res.render('categories', {
     'cats': [
-            {'name': cats_list[0], 'name_lower': cats_list[0].toLowerCase(), 'icon': 'glyphicon-cutlery' },
-            {'name': cats_list[1], 'name_lower': cats_list[1].toLowerCase(), 'icon': 'glyphicon-flag'},
-            {'name': cats_list[2], 'name_lower': cats_list[2].toLowerCase(), 'icon': 'glyphicon-bullhorn'},
+            {'name': cats_list[0], 'name_lower': cats_list[0].toLowerCase(), 'icon': 'glyphicon-cutlery', 'explore': explore },
+            {'name': cats_list[1], 'name_lower': cats_list[1].toLowerCase(), 'icon': 'glyphicon-flag', 'explore': explore},
+            {'name': cats_list[2], 'name_lower': cats_list[2].toLowerCase(), 'icon': 'glyphicon-bullhorn', 'explore': explore},
         ],
-    'posted': posted
+    'posted': posted,
+    'explore': explore // true if we are exploring venues, false if we want to edit faves from here
   	});
 };
 

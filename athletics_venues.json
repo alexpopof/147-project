@@ -2,19 +2,19 @@
 		{
 			"name": "West Pool",
 			"description": "",
-			"imageURL": "/images/West_Pool",
+			"imageURL": "/images/West_Pool.jpeg",
 			"favorited": true,
 			"address": "235 Sam McDonald Mall, Stanford, CA 94305",
 			"telephone": "(650) 326-1000",
 			"hours": "Monday - Sunday: 7:00am - 9:00pm",
-			"website": "gotts.com/",
+			"website": "http://cardinalrec.stanford.edu/",
 			"latitude": "37.43145",
 			"longitude": "-122.16213"	
 		},
 		{
 			"name": "Arrillaga Gym",
 			"description": "",
-			"imageURL": "/images/Arrillaga_Gym",
+			"imageURL": "/images/Arrillaga_Gym.jpg",
 			"favorited": false,
 			"address": "341 Galvez St, Stanford, CA 94305",
 			"telephone": "(650) 724-9872",
@@ -26,7 +26,7 @@
 		{
 			"name": "Ford Center",
 			"description": "",
-			"imageURL": "/images/Ford_Center",
+			"imageURL": "/images/Ford_Center.jpg",
 			"favorited": true,
 			"address": "615 Serra St, Stanford, CA 94305",
 			"telephone": "",

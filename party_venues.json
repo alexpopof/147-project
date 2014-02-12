@@ -2,7 +2,7 @@
 		{
 			"name": "The Patio",
 			"description": "",
-			"imageURL": "images/The_Patio.jpg",
+			"imageURL": "/images/The_Patio.jpg",
 			"favorited": false,
 			"address": "412 Emerson St, Palo Alto, CA 94301",
 			"telephone": "(650) 322-2575",
@@ -14,7 +14,7 @@
 		{
 			"name": "Old Pro",
 			"description": "",
-			"imageURL": "images/Old_Pro.jpg",
+			"imageURL": "/images/Old_Pro.jpg",
 			"favorited": true,
 			"address": "541 Ramona St, Palo Alto, CA 94301",
 			"telephone": "(650) 326-1446",

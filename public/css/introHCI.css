@@ -53,6 +53,16 @@ html, body {
         How to change background color, this code turns it red*/
 }
 
+#home-alerts .venue-alert {
+    /* for venue page */
+    margin: 25px;
+    height: 150px;
+    width: 80%;
+    text-align: center;
+    vertical-align: center;
+        
+}
+
 #home-alerts .alert-venue {
     margin-top: 25px;
     font-size: 40px;   
@@ -62,6 +72,17 @@ html, body {
     margin-top: 15px;
     font-size: 25px;
 }
+
+#home-alerts .alert-venue-subtitle {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+#home-alerts .alert-timestamp {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
 .btn-home {
     float:right;
 }
@@ -78,7 +99,11 @@ html, body {
     color: black;
 }
 
+p.italic {font-style:italic;}
 
+.img {
+    height: 125px;
+}
 
 /*.btn-info {
 background-image: linear-gradient(to bottom,#FFFFFF 0,#000000 100%);

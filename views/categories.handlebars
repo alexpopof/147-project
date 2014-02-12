@@ -23,7 +23,15 @@
 	</div>
 
 	<div style="width: 100% float: left; text-align: center;
-	vertical-align: middle; font-size: 48px; margin: 25px;"> Favorites: Select a Category </div>
+	vertical-align: middle; font-size: 48px; margin: 25px;"> 
+  {{#if explore}}
+  Select a Category
+  {{else}}
+  Favorites: Select a Category 
+  {{/if}}
+  </div>
+
+
   {{#if posted}}
     <div class="alert alert-success" style="width: 100% float left; text-align: center;
     vertical-align: middle; font-size: 24px; margin: 10px; margin-bottom: 35px;"
@@ -32,9 +40,18 @@
   {{#each cats}}
     <div style="width: 100% float left; text-align: center;
        vertical-align: middle; font-size: 48px; margin: 35px;">
+
+      {{#if explore}}
+
+      <a href="/venues/{{name_lower}}" class="btn btn-info btn-lg btn-text">
+        <i class="glyphicon {{icon}}"></i>&nbsp; &nbsp;{{name}}
+      </a> 
+      {{else}}
       <a href="/favorites/{{name_lower}}" class="btn btn-info btn-lg btn-text">
         <i class="glyphicon {{icon}}"></i>&nbsp; &nbsp;{{name}}
-      </a>
+      </a> 
+      {{/if}}
+      
     </div>
   {{/each}} 
 

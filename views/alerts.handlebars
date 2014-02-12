@@ -58,30 +58,35 @@
 			<a href="/" class="btn btn-info btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 		</div>
 		<div align="center">
-			<h1>{{venue}}</h1>
+			<h1 style="font-size: 50px;">{{venue}}</h1>
 			<img src="{{imageURL}}" class="img"/>
 			<h2>{{description}}</h2>
-			<h2>{{address}}</h2>
-			<h3>{{telephone}}</h3>
-			<h3>{{hours}}</h3>
-			<a href={{website}}>{{website}}</a>
+			
+			<a href={{website}}>{{venue}}: Website</a>
 		</div>
 
 		
-		<div class="col-sm-4" align="center" style="width: 100%; float left; margin: 20px;">
-			<div id="map_canvas"></div>
+		<div class="col-sm-4" align="center" style="width: 100%; float left; margin: 20px;">			
 			<div class="list-group" align="center" id="home-alerts">				
 				{{#each specific_alert}}
-				<a href="#" class="btn btn-{{severity}} alert">
-					<div class = 'alert-venue'>{{venue}}</div>
-					<div class = 'alert-subtitle'>"{{alert}}"</div>
+				<a href="#" class="btn btn-{{severity}} venue-alert">					
+					<div class = 'alert-venue-subtitle'>"{{alert}}"</div>
+					<p class = 'alert-timestamp italic'>{{timestamp}}</p>
 				</a>
 				{{/each}}
-
+				<a href="/addalerts/{{venue}}" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add An Alert</a>
 			</div>
+			<hr/>
+			<div id="map_canvas"></div>
 		</div>
 
-		<a href="/addalerts/{{venue}}" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add An Alert</a>
+		
+		<div align="center">
+			<h2>{{address}}</h2>
+			<h3>{{telephone}}</h3>
+			<h3>{{hours}}</h3>
+		</div>
+
 
 	</div>
 
