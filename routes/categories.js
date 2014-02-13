@@ -29,10 +29,12 @@ exports.view = function(req, res){
 		    data = party;
 		  }
 		faves_list = faves.split('|');
+		for (var i = 0; i<faves_list.length; i++)
+			faves_list[i] = faves_list[i].trim();
 		console.log(faves_list);
 		for (var i = 0; i<data.length; i++) {
-			var venue_name = data[i]["name"]
-
+			var venue_name = data[i]["name"].trim();
+			console.log(venue_name);
 			if (include(faves_list, venue_name))
 				data[i]["favorited"] = true;
 			else
