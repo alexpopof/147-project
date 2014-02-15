@@ -17,7 +17,7 @@ exports.view = function(req, res){
 	var posted = false;
 	if (typeof faves != "undefined"){
 		var category = req.body.category.toLowerCase();
-		//console.log(category);
+
 		var data;
 		  if (category == "food") {
 		    data = food;

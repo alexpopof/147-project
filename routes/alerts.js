@@ -5,12 +5,19 @@ var party = require('../party_venues.json');
 var all_venues = [];
 all_venues = all_venues.concat(food).concat(workout).concat(party);
 
-
 var alerts_json = require('../alerts.json');
 
 
 exports.view = function(req, res){
   	var venue_param = req.params.venue; // name of venue
+
+    var backURL=req.header('Referer') || '/';
+    var indexOfRelative = backURL.indexOf('/venues');
+    if (indexOfRelative < 0)
+      backURL = '/';
+    else
+      backURL = backURL.substring(indexOfRelative);
+
   	var favorited = false; // if the venue is a fave already
   	var description; // venue description
   	var imageURL;
@@ -29,8 +36,7 @@ exports.view = function(req, res){
       website = ven_info["website"]
       latitude = ven_info["latitude"]
       longitude = ven_info["longitude"]
-		}
-			
+		}			
 	}
 	// eventually we will use a DB, but here you can loop through the alerts
 	// to find the ones that correspond with this venue.
@@ -54,7 +60,7 @@ exports.view = function(req, res){
       'website': website,
       'specific_alert': venue_specific_alerts,
       'latitude': latitude,
-      'longitude': longitude
+      'longitude': longitude,
+      'backURL': backURL
   	});
-	
 };
