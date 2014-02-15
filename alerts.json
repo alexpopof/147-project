@@ -23,7 +23,7 @@
 		{
 			"venue": "Starbucks",
 			"alert": "Holiday Menu",
-			"severity": "primary",
+			"severity": "info",
 			"timestamp": "Today @ 12:40 AM"					
 		}
 ]

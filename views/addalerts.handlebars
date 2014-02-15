@@ -26,14 +26,14 @@
 <body>
 	<div class="container">
 		<div style="width: 100%; float: left; margin: 20px;">
-	    	<a href="/" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> 
-			<a href="/" class="btn btn-info btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
+	    	<a href="/" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> 
+			<a href="/" class="btn btn-primary btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 		</div>
 		<div align="center" style="margin-bottom: 40px;">
 			<h1 style="font-size:48px; ">Add an Alert</h1>	
 		</div>
 		
-		<div style="margin: 0 auto; width:70%; border:5px solid black; padding: 30px; font-size:24px;">
+		<div style="margin: 0 auto; width:75%; border:5px solid black; padding: 30px; font-size:24px;">
 			<form class="bs-example bs-example-form" id="add-alert-form" role="form" method="post" action="/">
 				<div class="input-group input-group-lg" align="left">
 					<label>Venue</label><br/>
@@ -62,8 +62,9 @@
 				<hr/>
 
 				<div class="input-group input-group-lg">
-					<label>Alert description</label><br/>
-					<textarea rows="5" cols="25" name="description"></textarea>
+					<label>Alert tagline</label><br/>
+					<p>40 characters max</p>
+					<input type="text" name="description" maxlength="40"></textarea>
 				</div>
 
 				<hr/>
@@ -78,8 +79,8 @@
 						<label class="btn btn-warning " style="font-size:32px;">
 						    <input type="radio" name="severity" value = "warning" id="option2">Minor
 						</label>
-						<label class="btn btn-primary " style="font-size:32px;">
-						    <input type="radio" name="severity" value ="primary" id="option3">FYI
+						<label class="btn btn-info " style="font-size:32px;">
+						    <input type="radio" name="severity" value ="info" id="option3">FYI
 						</label>
 						<label class="btn btn-success " style="font-size:32px;">
 						    <input type="radio" name="severity" value = "success" id="option4">Kudos
@@ -93,7 +94,7 @@
 				<hr/>
 
 				<div class="input-group input-group-lg">
-					<input type="submit" value="Submit Alert" class="btn btn-info btn-text">
+					<input type="submit" value="Submit Alert" class="btn btn-primary btn-text">
 				</div>
 
 			</form>

@@ -18,22 +18,22 @@
 <body style = "margin: 40px;">
 <div class = "container">
 	<div style="width: 100%; float: left; margin: 20px;">
-    <a href="/" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> 
-		<a href="/" class="btn btn-info btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
+    <a href="/" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> 
+		<a href="/" class="btn btn-primary btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 	</div>
 
 	<div style="width: 100% float: left; text-align: center;
 	vertical-align: middle; font-size: 48px; margin: 25px;"> 
   {{#if explore}}
-  Select a Category
+    Select a Category
   {{else}}
-  Favorites: Select a Category 
+    Favorites: Select a Category 
   {{/if}}
   </div>
 
 
   {{#if posted}}
-    <div class="alert alert-success" style="width: 100% float left; text-align: center;
+    <div class="alert alert-success" style="width: 100%; float left; text-align: center;
     vertical-align: middle; font-size: 24px; margin: 10px; margin-bottom: 35px;"
     id="favorites-success-alert">Favorites edited successfully!</div>
   {{/if}}
@@ -43,11 +43,11 @@
 
       {{#if explore}}
 
-      <a href="/venues/{{name_lower}}" class="btn btn-info btn-lg btn-text">
+      <a href="/venues/{{name_lower}}" class="btn btn-primary btn-lg btn-text">
         <i class="glyphicon {{icon}}"></i>&nbsp; &nbsp;{{name}}
       </a> 
       {{else}}
-      <a href="/favorites/{{name_lower}}" class="btn btn-info btn-lg btn-text">
+      <a href="/favorites/{{name_lower}}" class="btn btn-primary btn-lg btn-text">
         <i class="glyphicon {{icon}}"></i>&nbsp; &nbsp;{{name}}
       </a> 
       {{/if}}

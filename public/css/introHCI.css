@@ -55,12 +55,14 @@ html, body {
 
 #home-alerts .venue-alert {
     /* for venue page */
-    margin: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
     height: 150px;
     width: 80%;
     text-align: center;
-    vertical-align: center;
-        
+    vertical-align: center;        
 }
 
 #home-alerts .alert-venue {
@@ -87,6 +89,9 @@ html, body {
     float:right;
 }
 
+.alert-resolved {
+    margin-bottom: 35px;
+}
 
 .btn-yellow { 
     border-color: yellow; 
