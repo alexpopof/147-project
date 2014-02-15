@@ -11,6 +11,7 @@ $(document).ready(function() {
 function initializePage() {
 	$('#add-alert-form').submit(alertFormListener);
 	$('#faves_save').click(getFavoritesFromSortable2);
+	$(".alert-resolved").click(alertResolved);
 }
 
 function alertFormListener() {
@@ -41,4 +42,18 @@ function getFavoritesFromSortable2() {
 	console.log(text);
 	console.log($('#faves_list').text());
 	$('#faves_list').val(text);
+}
+
+function alertResolved() {
+	var closestAlert = $(this).closest('.alertDiv');
+	
+	var closestText = $(this).prev().children().first().text();
+	closestText = closestText.substring(1, closestText.length-1); // remove quotes
+	console.log(closestText);
+	closestAlert.fadeOut();
+	$.post("/removealerts", {"alert":closestText}, dummyFn);
+}
+
+function dummyFn() {
+	//omitted intentionally
 }

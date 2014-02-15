@@ -20,6 +20,8 @@ var addalerts = require('./routes/addalerts');
 
 var venues = require('./routes/venues');
 
+var removealerts = require('./routes/removealerts');
+
 var app = express();
 
 // all environments
@@ -59,6 +61,8 @@ app.get('/addalerts', addalerts.view);
 app.get('/addalerts/:venue', addalerts.view);
 
 app.get('/venues/:category', venues.view);
+
+app.post('/removealerts', removealerts.view);
 
 // Example route
 // app.get('/users', user.list);

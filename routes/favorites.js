@@ -31,7 +31,7 @@ exports.view = function(req, res) {
     else
       unselected.push(data[i]);
   }
-
+  console.log(food);
   category = cap(category);
     res.render('favorites', {
     'unselected': unselected,

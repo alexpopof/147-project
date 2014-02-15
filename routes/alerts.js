@@ -7,7 +7,6 @@ all_venues = all_venues.concat(food).concat(workout).concat(party);
 
 var alerts_json = require('../alerts.json');
 
-
 exports.view = function(req, res){
   	var venue_param = req.params.venue; // name of venue
 

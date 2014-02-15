@@ -12,6 +12,7 @@
  	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
  	<script src="/js/jquery.ui.touch-punch.min.js"></script>
   	<script src="/js/bootstrap.min.js"></script>
+  	<script src="/js/introHCI.js"></script>
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -71,14 +72,17 @@
 		<div class="col-sm-4" align="center" style="width: 100%; float left; margin: 20px;">			
 			<div class="list-group" align="center" id="home-alerts">				
 				{{#each specific_alert}}
-				<a href="#" class="btn btn-{{severity}} venue-alert">					
-					<div class = 'alert-venue-subtitle'>"{{alert}}"</div>
-					<p class = 'alert-timestamp italic'>{{timestamp}}</p>
-				</a>
+				<div class = "alertDiv">
+					<a href="#" class="btn btn-{{severity}} venue-alert">					
+						<div class = 'alert-venue-subtitle'>"{{alert}}"</div>
+						<p class = 'alert-timestamp italic'>{{timestamp}}</p>
+					</a>
+					<a class="btn btn-info btn-text alert-resolved"><i class="glyphicon glyphicon-flash"></i> Mark as Resolved</a>
+				</div>
 				{{/each}}
+				<hr/>
 				<a href="/addalerts/{{venue}}" class="btn btn-info btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add An Alert</a>
 			</div>
-			<hr/>
 			<div id="map_canvas"></div>
 		</div>
 

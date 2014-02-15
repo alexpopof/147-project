@@ -34,7 +34,6 @@ exports.view = function(req, res){
 		console.log(faves_list);
 		for (var i = 0; i<data.length; i++) {
 			var venue_name = data[i]["name"].trim();
-			console.log(venue_name);
 			if (include(faves_list, venue_name))
 				data[i]["favorited"] = true;
 			else
