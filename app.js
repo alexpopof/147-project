@@ -22,6 +22,8 @@ var venues = require('./routes/venues');
 
 var removealerts = require('./routes/removealerts');
 
+var changefavorite = require('./routes/changefavorite');
+
 var app = express();
 
 // all environments
@@ -63,6 +65,7 @@ app.get('/addalerts/:venue', addalerts.view);
 app.get('/venues/:category', venues.view);
 
 app.post('/removealerts', removealerts.view);
+app.post('/changefavorite', changefavorite.view);
 
 // Example route
 // app.get('/users', user.list);

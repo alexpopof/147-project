@@ -26,8 +26,8 @@
 
 	<div style="width: 100% float left; text-align: center;
 	vertical-align: middle; font-size: 48px; margin: 10px; margin-bottom: 15px;"> Venues: {{category}} </div>
-  <div style="margin: 0 auto; width:80%; border:5px solid black; padding: 30px; font-size:24px;">
-    <table cellpadding="10">
+  <div style="margin: 0 auto; width:85%; border:5px solid black; padding: 30px; font-size:24px;">
+    <table cellpadding="7">
     {{#each data}}
     <tr>
     <td>
@@ -37,8 +37,16 @@
     </td>
     <td>
       <a href = "/alerts/{{name}}">
-        <div >{{name}}</div>
+        <div>{{name}}</div>
       </a>
+    </td>
+    <td>
+      {{#if favorited}}
+       <a class="btn btn-primary btn-lg remove-faves-btn">Remove from Favorites</a>
+      {{else}}
+        <a class="btn btn-primary btn-lg add-faves-btn"><i class="glyphicon glyphicon-star"></i> Add to Favorites</a>
+      {{/if}}
+
     </td>
     </tr>
 

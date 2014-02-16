@@ -15,8 +15,8 @@ var workout = require('../athletics_venues.json');
 var party = require('../party_venues.json');
 
 
-
 exports.view = function(req, res){
+	console.log(food);
 	var favorited_venue_names = [];
 	for (var i = 0; i < food.length; i++) {
 		var ven = food[i];
@@ -39,7 +39,6 @@ exports.view = function(req, res){
 	  var hours = date.getHours();
 	  var minutes = date.getMinutes();
 	  var ampm = hours >= 12 ? 'pm' : 'am';
-	  hours = hours-8; //PST fix?
 	  hours = hours % 12;
 	  hours = hours ? hours : 12; // the hour '0' should be '12'
 	  minutes = minutes < 10 ? '0'+minutes : minutes;
@@ -54,7 +53,7 @@ exports.view = function(req, res){
 	var severity = req.body.severity;
 	var currentTime = new Date();
 	console.log(currentTime);
-	var timeString = formatAMPM(currentTime);
+	var timeString = "Today @ " + formatAMPM(currentTime);
 	var newAlert = {
 			"venue": venue,
 			"alert": description,

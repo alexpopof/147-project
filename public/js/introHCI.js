@@ -12,6 +12,8 @@ function initializePage() {
 	$('#add-alert-form').submit(alertFormListener);
 	$('#faves_save').click(getFavoritesFromSortable2);
 	$(".alert-resolved").click(alertResolved);
+	$(".add-faves-btn").click(addToFaves);
+	$(".remove-faves-btn").click(removeFromFaves);
 }
 
 function alertFormListener() {
@@ -57,3 +59,39 @@ function alertResolved() {
 function dummyFn() {
 	//omitted intentionally
 }
+
+function addToFaves() {
+	var btn = $(this);
+	console.log('add click');
+	btn.addClass("remove-faves-btn");
+	btn.removeClass("add-faves-btn");
+
+	btn.text(" Remove from Favorites");
+	var venue = btn.parent().prev().children().first().children().first().text();
+	//console.log(venue);
+	var url = document.URL;
+	var path_list = url.split("/");
+	var category = path_list[path_list.length-1];
+	//console.log(category);
+	btn.click(removeFromFaves);
+	$.post("/changefavorite", {"venue":venue, "category":category, "newBoolean": true}, dummyFn);
+}
+
+
+function removeFromFaves() {
+	var btn = $(this);
+	console.log('remove click');
+	console.log(btn.text());
+	btn.removeClass("remove-faves-btn");
+	btn.addClass("add-faves-btn");
+	btn.text(" Add to Favorites");
+	var venue = btn.parent().prev().children().first().children().first().text();
+	btn.prepend('<i class="glyphicon glyphicon-star"></i>')
+	var url = document.URL;
+	var path_list = url.split("/");
+	var category = path_list[path_list.length-1];
+	//console.log(category);
+	btn.click(addToFaves);
+	$.post("/changefavorite", {"venue":venue, "category":category, "newBoolean": false}, dummyFn);
+}
+

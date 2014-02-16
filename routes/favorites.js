@@ -20,7 +20,7 @@ exports.view = function(req, res) {
   if (category == "party") {
     data = party;
   }
-  //console.log(data);
+  
   unselected = [];
   favorited = [];
   for (var i = 0; i<data.length; i++) {

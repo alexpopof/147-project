@@ -1,8 +1,3 @@
-
-/*
- * GET home page.
- */
-
 var alerts_json = require('../alerts.json');
 
 
