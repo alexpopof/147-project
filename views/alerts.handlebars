@@ -61,11 +61,11 @@
 			<a href="/" class="btn btn-primary btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 		</div>
 		<div align="center">
-			<h1 style="font-size: 50px;">{{venue}}</h1>
+			<h1 style="font-size: 50px;" id="venue-title">{{venue}}</h1>
 			<img src="{{imageURL}}" class="img"/>
 			<h2>"{{description}}"</h2>
-			
-			<a href={{website}}>{{venue}}: Website</a>
+			<h3><span>Category: </span><span id="venue-category">{{category}}</span></h3>
+			<a href={{website}} style="font-size: 16px;">{{venue}}: Website</a>
 		</div>
 
 		
@@ -81,11 +81,17 @@
 				</div>
 				{{/each}}
 				<hr/>
-				<a href="/addalerts/{{venue}}" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add An Alert</a>
+				<a href="/addalerts/{{venue}}" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add an Alert</a>
+				{{#if favorited}}
+			       <a class="btn btn-primary btn-lg btn-text" id = "venue-remove-fave">Remove from Favorites</a>
+			    {{else}}
+			        <a class="btn btn-primary btn-lg btn-text" id = "venue-add-fave"><i class="glyphicon glyphicon-star"></i> Add to Favorites</a>
+			    {{/if}}
 			</div>
 			<div id="map_canvas"></div>
 		</div>
-
+		
+		
 		
 		<div align="center">
 			<h2>{{address}}</h2>

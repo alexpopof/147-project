@@ -9,7 +9,8 @@
 			"hours": "Monday - Sunday: 7:00am - 9:00pm",
 			"website": "gotts.com/",
 			"latitude": "37.43888",
-			"longitude": "-122.15932"
+			"longitude": "-122.15932",
+			"category": "food"
 		},
 		{
 			"name": "Subway",
@@ -21,7 +22,8 @@
 			"hours": "Monday - Friday: 9:00am - 7:00pm Saturday - Sunday: 11:00am - 4:00pm",
 			"website": "https://www.subway.com/‎",
 			"latitude": "37.42410",
-			"longitude": "-122.17066"			
+			"longitude": "-122.17066",
+			"category": "food"			
 		},
 		{
 			"name": "Jimmy V's",
@@ -33,7 +35,8 @@
 			"hours": "Monday - Friday: 7:00am - 4:00pm",
 			"website": "https://www.facebook.com/pages/Jimmy-Vs-Sports-Cafe/123803080731",
 			"latitude": "37.43019",
-			"longitude": "-122.16194"
+			"longitude": "-122.16194",
+			"category": "food"
 		},
 		{
 			"name": "Panda Express",
@@ -45,7 +48,8 @@
 			"hours": "Monday - Friday: 10:00am - 9:00pm Saturday - Sunday: 10:00am - 8:00pm",
 			"website": "https://www.pandaexpress.com/‎",
 			"latitude": "37.42410",
-			"longitude": "-122.17066"
+			"longitude": "-122.17066",
+			"category": "food"
 		},
 		{
 			"name": "Starbucks",
@@ -57,6 +61,7 @@
 			"hours": "Monday - Friday: 6:30am - 11:00pm Saturday:  7:00am - 9:00pm Sunday: 7:00am - 10:00pm",
 			"website": "https://www.starbucks.com/‎",
 			"latitude": "37.42410",
-			"longitude": "-122.17066"
+			"longitude": "-122.17066",
+			"category": "food"
 		}
 ]

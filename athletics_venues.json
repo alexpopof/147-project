@@ -9,7 +9,8 @@
 			"hours": "Monday - Sunday: 7:00am - 9:00pm",
 			"website": "http://cardinalrec.stanford.edu/",
 			"latitude": "37.43145",
-			"longitude": "-122.16213"	
+			"longitude": "-122.16213",
+			"category": "workout"	
 		},
 		{
 			"name": "Arrillaga Gym",
@@ -21,7 +22,8 @@
 			"hours": "Monday - Thursday: 6:00am - 12:00pm Friday: 6:00am - 12:00pm Saturday: 9:00am - 8:00pm Sunday: 9:00am - 12:00am",
 			"website": "http://cardinalrec.stanford.edu/",
 			"latitude": "37.42956",
-			"longitude": "-122.16408"		
+			"longitude": "-122.16408",
+			"category": "workout"			
 		},
 		{
 			"name": "Ford Center",
@@ -33,6 +35,7 @@
 			"hours": "Monday - Thursday: 6:00am - 11:00pm Friday: 6:00am - 10:00pm Saturday: 9:00am - 7:00pm Sunday: 9:00am - 11:00pm",
 			"website": "http://www.gostanford.com/ViewArticle.dbml?DB_OEM_ID=30600&ATCLID=208446884",
 			"latitude": "37.42801",
-			"longitude": "-122.16448"			
+			"longitude": "-122.16448",
+			"category": "workout"				
 		}
 ]

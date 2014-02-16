@@ -17,6 +17,11 @@ exports.view = function(req, res){
     else
       backURL = backURL.substring(indexOfRelative);
 
+    var cap = function capitaliseFirstLetter(string)
+    {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
   	var favorited = false; // if the venue is a fave already
   	var description; // venue description
   	var imageURL;
@@ -27,14 +32,15 @@ exports.view = function(req, res){
 		var ven_info = all_venues[i];
 		if (ven_info["name"] == venue_param) {
 			favorited = ven_info["favorited"];
-			description = ven_info["description"]
-			imageURL = ven_info["imageURL"]
-			address = ven_info["address"]
-      telephone = ven_info["telephone"]
-      hours = ven_info["hours"]
-      website = ven_info["website"]
-      latitude = ven_info["latitude"]
-      longitude = ven_info["longitude"]
+			description = ven_info["description"];
+			imageURL = ven_info["imageURL"];
+			address = ven_info["address"];
+      telephone = ven_info["telephone"];
+      hours = ven_info["hours"];
+      website = ven_info["website"];
+      latitude = ven_info["latitude"];
+      longitude = ven_info["longitude"];
+      category = ven_info["category"];
 		}			
 	}
 	// eventually we will use a DB, but here you can loop through the alerts
@@ -60,6 +66,7 @@ exports.view = function(req, res){
       'specific_alert': venue_specific_alerts,
       'latitude': latitude,
       'longitude': longitude,
-      'backURL': backURL
+      'backURL': backURL,
+      'category': cap(category)
   	});
 };

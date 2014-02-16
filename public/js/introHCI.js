@@ -14,6 +14,8 @@ function initializePage() {
 	$(".alert-resolved").click(alertResolved);
 	$(".add-faves-btn").click(addToFaves);
 	$(".remove-faves-btn").click(removeFromFaves);
+	$("#venue-add-fave").click(venueAddFave);
+	$("#venue-remove-fave").click(venueRemoveFave);
 }
 
 function alertFormListener() {
@@ -77,6 +79,18 @@ function addToFaves() {
 	$.post("/changefavorite", {"venue":venue, "category":category, "newBoolean": true}, dummyFn);
 }
 
+//from individual venue page as opposed to list view
+function venueAddFave() {
+
+	var venue = $('#venue-title').text();
+	var cat = $('#venue-category').text().toLowerCase();
+	var btn = $(this);
+	btn.text(" Remove from Favorites");
+	btn.attr('id','venue-remove-fave');
+	btn.click(venueRemoveFave);
+	$.post("/changefavorite", {"venue":venue, "category":cat, "newBoolean": true}, dummyFn);
+}
+
 
 function removeFromFaves() {
 	var btn = $(this);
@@ -93,5 +107,16 @@ function removeFromFaves() {
 	//console.log(category);
 	btn.click(addToFaves);
 	$.post("/changefavorite", {"venue":venue, "category":category, "newBoolean": false}, dummyFn);
+}
+
+function venueRemoveFave() {
+	var venue = $('#venue-title').text();
+	var cat = $('#venue-category').text().toLowerCase();
+	var btn = $(this);
+	btn.text(" Add to Favorites");
+	btn.prepend('<i class="glyphicon glyphicon-star"></i>')
+	btn.attr('id','venue-add-fave');
+	btn.click(venueAddFave);
+	$.post("/changefavorite", {"venue":venue, "category":cat, "newBoolean": false}, dummyFn);
 }
 
