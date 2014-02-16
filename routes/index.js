@@ -38,6 +38,11 @@ exports.view = function(req, res){
 	function formatAMPM(date) {
 	  var hours = date.getHours();
 	  var minutes = date.getMinutes();
+	  
+	  //GMT->PST
+	  hours = hours - 8;
+	  hours = hours < 0 ? hours + 24 : hours;
+
 	  var ampm = hours >= 12 ? 'pm' : 'am';
 	  hours = hours % 12;
 	  hours = hours ? hours : 12; // the hour '0' should be '12'
