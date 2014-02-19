@@ -26,6 +26,7 @@ mongoose.connect(database_uri);
 
 // Step 1: load the JSON data
 var venues_json = require('./venues.json');
+var alerts_json = require('./alerts.json');
 
 // Step 2: Remove all existing documents
 models.Venue
@@ -35,9 +36,8 @@ models.Venue
 
 // Step 3: load the data from the JSON file
 function onceClear(err) {
-  console.log("once clear");
   if(err) console.log(err);
-
+  console.log('db venue');
   // loop over the projects, construct and save an object from each one
   // Note that we don't care what order these saves are happening in...
   var to_save_count = venues_json.length;
@@ -48,6 +48,38 @@ function onceClear(err) {
     ven.save(function(err, ven) {
       if(err) console.log(err);
 
+      to_save_count--;
+      console.log(to_save_count + ' left to save');
+      if(to_save_count <= 0) {
+        console.log('DONE');
+        // The script won't terminate until the 
+        // connection to the database is closed
+        
+        //mongoose.connection.close()
+      }
+    });
+  }
+}
+
+// Step 2: Remove all existing documents
+models.Alert
+  .find()
+  .remove()
+  .exec(onceClearAlert); // callback to continue at
+
+// Step 3: load the data from the JSON file
+function onceClearAlert(err) {
+  console.log('db alerts');
+  if(err) console.log(err);
+  // loop over the projects, construct and save an object from each one
+  // Note that we don't care what order these saves are happening in...
+  var to_save_count = alerts_json.length;
+  for(var i=0; i<alerts_json.length; i++) {
+    var json = alerts_json[i];
+    var al = new models.Alert(json);
+    al.save(function(err, al) {
+      if(err) console.log(err);
+      
       to_save_count--;
       console.log(to_save_count + ' left to save');
       if(to_save_count <= 0) {

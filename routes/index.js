@@ -2,7 +2,7 @@
 /*
  * GET home page.
  */
-
+var models = require('../models');
 var alerts_json = require('../alerts.json');
 
 
@@ -16,7 +16,6 @@ var party = require('../party_venues.json');
 
 
 exports.view = function(req, res){
-	console.log(food);
 	var favorited_venue_names = [];
 	for (var i = 0; i < food.length; i++) {
 		var ven = food[i];
@@ -57,7 +56,7 @@ exports.view = function(req, res){
 	var description = req.body.description;
 	var severity = req.body.severity;
 	var currentTime = new Date();
-	console.log(currentTime);
+	//console.log(currentTime);
 	var timeString = "Today @ " + formatAMPM(currentTime);
 	var newAlert = {
 			"venue": venue,
@@ -71,7 +70,7 @@ exports.view = function(req, res){
 	}
 
 
-	console.log(favorited_venue_names);
+	//console.log(favorited_venue_names);
 	var all_alerts_list = alerts["alerts"];
 	var alerts_to_show = [];
 	for (var i = 0; i<all_alerts_list.length; i++) {
@@ -81,5 +80,15 @@ exports.view = function(req, res){
 			alerts_to_show.push(all_alerts_list[i]);
 	}
 
-  	res.render('index', {'alerts':alerts_to_show});
+	console.log('getting alerts from db');
+	models.Alert.find().exec(renderIndex);
+	//TODO: see if venue is favorited
+
+	function renderIndex(err, alerts_db) {
+		console.log("callback");
+		res.render('index', {'alerts':alerts_db});
+	}
+ 	
 };
+
+

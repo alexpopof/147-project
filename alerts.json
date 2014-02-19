@@ -3,14 +3,14 @@
 			"venue": "Panda Express",
 			"alert": "Out of Orange Chicken",
 			"severity": "warning",
-			"timestamp": "Today @ 11:45 AM"
+			"timestamp": "February 20, 2014"
 			
 		},
 		{
 			"venue": "Subway",
 			"alert": "Ants",
 			"severity": "danger",
-			"timestamp": "Today @ 12:45 PM"
+			"timestamp": "February 20, 2014"
 					
 		},
 		
@@ -18,12 +18,12 @@
 			"venue": "Starbucks",
 			"alert": "Out of Caffeine",
 			"severity": "danger",			
-			"timestamp": "Today @ 9:05 AM"				
+			"timestamp": "February 20, 2014"			
 		},
 		{
 			"venue": "Starbucks",
 			"alert": "Holiday Menu",
 			"severity": "info",
-			"timestamp": "Today @ 12:40 AM"					
+			"timestamp": "February 20, 2014"					
 		}
 ]

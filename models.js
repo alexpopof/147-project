@@ -19,3 +19,13 @@ var VenueSchema = new Mongoose.Schema({
 exports.Venue = Mongoose.model('Venue', VenueSchema);
 
 
+var AlertSchema = new Mongoose.Schema({
+  	"venue": String,
+	"alert": String,
+	"severity": String,
+	"timestamp": { type: Date, default: Date.now }
+});
+
+exports.Alert = Mongoose.model('Alert', AlertSchema);
+
+
