@@ -1,6 +1,4 @@
-var food = require('../food_venues.json');
-var workout = require('../athletics_venues.json');
-var party = require('../party_venues.json');
+var models = require('../models');
 
 function include(arr,obj) {
     return (arr.indexOf(obj) != -1);
@@ -13,19 +11,13 @@ exports.view = function(req, res){
     	return string.charAt(0).toUpperCase() + string.slice(1);
   	}
 
-  	var category = req.params.category;
-	var data;
-  	if (category == "food") {
-    	data = food;
-  	}	
-  	if (category == "workout") {
-    	data = workout;
-  	}
-  	if (category == "party") {
-    	data = party;
-  	}	
-	
+  var category = req.params.category;
+	models.Venue.find({"category": category}).exec(afterData); 
+  function afterData(err, data) {   
+    res.render('venues', {'data': data, 'category': cap(category)}); 
+        
+  }
 
-  	res.render('venues', {'data': data, 'category': cap(category)});
+  	
 };
 

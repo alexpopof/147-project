@@ -1,6 +1,6 @@
-var food = require('../food_venues.json');
-var workout = require('../athletics_venues.json');
-var party = require('../party_venues.json');
+
+
+var models = require('../models');
 
 
 exports.view = function(req, res) {
@@ -10,35 +10,27 @@ exports.view = function(req, res) {
   {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  var data;
-  if (category == "food") {
-    data = food;
-  }
-  if (category == "workout") {
-    data = workout;
-  }
-  if (category == "party") {
-    data = party;
-  }
-  
-  unselected = [];
-  favorited = [];
-  for (var i = 0; i<data.length; i++) {
-    var ven_name = data[i]['name'];
-    var favorited_bool = data[i]['favorited'];
-    if (favorited_bool)
-      favorited.push(data[i]);
-    else
-      unselected.push(data[i]);
-  }
-  console.log(food);
-  category = cap(category);
-    res.render('favorites', {
-    'unselected': unselected,
-    'favorites': favorited,
-    'category': category
+
+  models.Venue.find({"category": category}).exec(afterData); 
+  function afterData(err, data) {   
+    unselected = [];
+    favorited = [];
+    for (var i = 0; i<data.length; i++) {
+      var ven_name = data[i]['name'];
+      var favorited_bool = data[i]['favorited'];
+      if (favorited_bool)
+        favorited.push(data[i]);
+      else
+        unselected.push(data[i]);
+    }
+    category = cap(category);
+      res.render('favorites', {
+      'unselected': unselected,
+      'favorites': favorited,
+      'category': category
    
-  });
+    });
+  }
 
 
 };

@@ -23,7 +23,9 @@ var AlertSchema = new Mongoose.Schema({
   	"venue": String,
 	"alert": String,
 	"severity": String,
-	"timestamp": { type: Date, default: Date.now }
+	"timestamp": { type: Date, default: Date.now },
+	"pretty_timestamp": {type: String, default: "just now"},
+	"status": String
 });
 
 exports.Alert = Mongoose.model('Alert', AlertSchema);

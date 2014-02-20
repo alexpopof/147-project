@@ -1,20 +1,12 @@
-var alerts_json = require('../alerts.json');
-
+var models = require('../models');
 
 
 exports.view = function(req, res){
 	alert_to_remove = req.body['alert'];
 
-	var indexToRemove = -1;
-	for (var i = 0; i < alerts_json.length; i++) {
-		var alert = alerts_json[i]['alert'];
-		if (alert == alert_to_remove) {
-			
-			indexToRemove = i;
-		}
+	models.Alert.find({"alert": alert_to_remove}).remove().exec(after);
+	function after (err) {
+		if(err) {console.log(err); res.send(500); }
+		res.send(req.body);
 	}
-	// console.log(indexToRemove);
-	alerts_json.splice(indexToRemove, 1); //remove 1 item
-	console.log(alerts_json);
-	res.send(req.body);
 };

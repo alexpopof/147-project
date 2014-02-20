@@ -27,7 +27,7 @@
 <body>
 	<div class="container" align="center">
 		<div style="width: 100%; float: left; margin: 20px;">
-			<h1>(Creative Title: TBD)</h1>
+			<h1>Clutch</h1>
 			<p style = 'font-size: 26px;'>"keep businesses accountable"</p>
 		</div>
 
@@ -45,7 +45,9 @@
 				<a href="/alerts/{{venue}}" class="btn btn-{{severity}} alert" >
 					<div class = 'alert-venue'>{{venue}}</div>
 					<div class = 'alert-subtitle'  >"{{alert}}"</div>
-					<p class = 'alert-timestamp italic'>{{timestamp}}</p>
+					<p class = 'alert-timestamp italic'>{{pretty_timestamp}}</p>
+					<!-- Will add closed or open tag here -->
+					<p class = 'alert-timestamp italic'>{{status}}</p>
 				</a>
 				{{/each}}
 			{{else}}

@@ -1,6 +1,4 @@
-var food = require('../food_venues.json');
-var workout = require('../athletics_venues.json');
-var party = require('../party_venues.json');
+var models = require('../models');
 
 exports.view = function(req, res){
 	var venue_to_change = req.body['venue'].trim();
@@ -8,25 +6,17 @@ exports.view = function(req, res){
 	var newBool = req.body['newBoolean'];
 	newBool = newBool == 'true';
 
-	var data;
-	if (category == "food") {
-	    data = food;
-	}
-	if (category == "workout") {
-	    data = workout;
-	}
-	if (category == "party") {
-	    data = party;
+	models.Venue.find({"category": category}).exec(afterData); 
+	function afterData(err, data) {   
+    	if(err) {console.log(err); res.send(500); }
+		
+		models.Venue.update({"name": venue_to_change},{"favorited": newBool}, afterUpdating);
+		
+		function afterUpdating(err, affected) {
+			if(err) {console.log(err); res.send(500);}
+			res.send(req.body);
+		}
+				
 	}
 
-	for (var i = 0; i < data.length; i++) {
-		venue = data[i];
-		if (venue["name"]==venue_to_change) {
-			
-			venue["favorited"] = newBool;
-			
-		}
-	}
-	
-	res.send(req.body);
 };
