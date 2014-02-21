@@ -60,56 +60,77 @@ exports.view = function(req, res){
 
 	//Code to process amount of time left till closing or if venue is closed duh
 	
-	var closingTime;
+	var closingTime = 1;
+	var openingTime = 1;
 	for (i = 0; i < all_favorited_info.length; i++) {
 		if(all_favorited_info[i]["name"] == req.body.venue) {
 			//instead of hours, I will wait for what kind of database we will have
 			//to determine how to handle this feature
-			closingTime = all_favorited_info[i]["hours"];
+			closingTime = all_favorited_info[i]["closed"];
+			openingTime = all_favorited_info[i]["open"];
 		}
 	}
-	var tempHours = currentTime.getHours() + 4;
+	var tempHours = currentTime.getHours() - 8;
+	tempHours = tempHours < 0 ? tempHours + 24 : tempHours;
 	var tempMinutes = currentTime.getMinutes();
 	var currTime = tempHours + ":" + tempMinutes;
 
-	startTime = "8:01"; // still waiting for database
-	endTime = "22:01"; // to determine parsing
 
 	var status;
 	var remainingTime;
+	var hourTest = 0;
+	var minTest = 0;
 
-	endTime.split(':');
-	var endHour = endTime[0];
-	var endMin = endTime[1];
-	var endTotalMin = endMin + endHour * 60;
-
-	startTime.split(':');
-	var startHour = startTime[0];
-	var startMin = startTime[1];
-	var startTotalMin = startMin + startHour * 60;
-
+	//openingTime = "8:00";
+	startTotalMin = 0;
+	endTotalMin = 0;
+	//weird timing issue resolved with if statement
+	if (openingTime != 1) {
+		openingTime.split(":");
+		if (openingTime[1] == ":") {
+			startTotalMin = openingTime[0] * 60 + openingTime[2] * 10;
+		} else {
+			startTotalMin = openingTime[0] * 600 + openingTime[1] * 60
+			+ openingTime[3] * 10;
+		}
+	}
+	if (closingTime != 1) {
+		closingTime.split(":");
+		if (closingTime[1] == ":") {
+			endTotalMin = closingTime[0] * 60 + closingTime[2] * 10;
+		} else {
+			endTotalMin = closingTime[0] * 600 + closingTime[1] * 60
+			+ closingTime[3] * 10;
+		}
+	}
+	
 	var currTotalMin = tempMinutes + tempHours * 60;
 
+	startTotalMin = parseInt(startTotalMin);
+	currTotalMin = parseInt(currTotalMin);
+	endTotalMin = parseInt(endTotalMin);
+
+	if (endTotalMin < startTotalMin) endTotalMin += 1440;
+	if (currTotalMin < startTotalMin) currTotalMin += 1440;
+
+	var remainingTime;
 	if (startTotalMin < currTotalMin && currTotalMin < endTotalMin) {
-		var newMin;
-		var newHour;
-		if (tempMinutes > endMin) {
-			newMin = 60 - endMin;
-			newHour = endHour - tempHours + 1;
+		remainingTime = endTotalMin - currTotalMin;
+	}
+
+	
+	var status;
+	if(remainingTime > 0) {
+		if (remainingTime > 59) {
+			var division = remainingTime / 60;
+			statusHours = Math.floor(division);
+			statusMinutes = remainingTime % 60;
+			status = statusHours + " hours and " + statusMinutes + " minutes until closing";
 		} else {
-			newMin = endMin - tempMinutes;
-			newHour = endHour - tempHours;
+			status = remainingTime + " minutes until closing";
 		}
-		remainingTime = newHour + ":" + newMin;
-		status = remainingTime + " remaining";
 	} else {
 		status = "Closed";
-	}
-	var blank;
-	if(startTotalMin < currTotalMin) {
-		blank = "yay";
-	} else {
-		blank = "boo" + currTotalMin + " " + startTotalMin + " " + endTotalMin;
 	}
 
 	
@@ -126,7 +147,7 @@ exports.view = function(req, res){
 			"severity": severity,
 			"timestamp": currentTime,
 			"pretty_timestamp": formatAMPM(currentTime),
-			"status": blank
+			"status": status
 		});
 	if (typeof venue != "undefined"){ //form posted successfully
 		newAlert.save(afterSave);
