@@ -58,7 +58,7 @@ exports.view = function(req, res){
 
 	var currentTime = new Date();
 
-	//Code to process amount of time left till closing or if venue is closed
+	//Code to process amount of time left till closing or if venue is closed duh
 	
 	var closingTime;
 	for (i = 0; i < all_favorited_info.length; i++) {
