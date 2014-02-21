@@ -155,13 +155,13 @@ exports.view = function(req, res){
 	}
 
 	else {
-		models.Alert.find().exec(renderIndex);
+		models.Alert.find().sort('-timestamp').exec(renderIndex);
 	}
 
 	function afterSave(err) {
 		if(err) {console.log(err); res.send(500); }
 		console.log('getting alerts from db');
-		models.Alert.find().exec(renderIndex);
+		models.Alert.find().sort('-timestamp').exec(renderIndex);
 	}
 
 

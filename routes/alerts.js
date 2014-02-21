@@ -32,7 +32,7 @@ exports.view = function(req, res){
       var latitude = ven_info["latitude"];
       var longitude = ven_info["longitude"];
       var category = ven_info["category"];
-      models.Alert.find({"venue": venue_param}).exec(afterAlertQuery); // find alerts for this venue
+      models.Alert.find({"venue": venue_param}).sort('-timestamp').exec(afterAlertQuery); // find alerts for this venue
       function afterAlertQuery(err, venue_specific_alerts) {
         if(err) {console.log(err); res.send(500); }
           res.render('alerts', {
