@@ -10,6 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$('#add-alert-form').submit(alertFormListener);
+	$('.btn-menu').click(changeSeverityLabel);
 	$('#faves_save').click(getFavoritesFromSortable2);
 	$(".alert-resolved").click(alertResolved);
 	$(".add-faves-btn").click(addToFaves);
@@ -31,6 +32,19 @@ function alertFormListener() {
 		//alert("You must choose a venue from the dropdown.  This is the first item in the form.");
 		return false;	
 	}
+
+	var alert_text = $('#add-alert-desc').val();
+	if (alert_text.length <= 0){
+		$('#alert-text-error').show();
+		//alert("You must choose a venue from the dropdown.  This is the first item in the form.");
+		return false;	
+	}
+}
+
+function changeSeverityLabel() {
+	var value = $(this).text();
+	$("#severity-chosen").text("Chosen: " + value);
+
 }
 
 function getFavoritesFromSortable2() {

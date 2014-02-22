@@ -26,14 +26,18 @@
 <body>
 	<div class="container">
 		<div style="width: 100%; float: left; margin: 20px;">
+			{{#if venue}}
+			<a href="/alerts/{{venue}}" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> 
+			{{else}}
 	    	<a href="/" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> 
+	    	{{/if}}
 			<a href="/" class="btn btn-primary btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 		</div>
 		<div align="center" style="margin-bottom: 40px;">
 			<h1 style="font-size:48px; ">Add an Alert</h1>	
 		</div>
-		
-		<div style="margin: 0 auto; width:75%; border:5px solid black; padding: 30px; font-size:24px;">
+
+		<div style="margin: 0 auto; width:75%; border:5px solid black; padding: 30px; font-size:28px;">
 			<form class="bs-example bs-example-form" id="add-alert-form" role="form" method="post" action="/">
 				<div class="input-group input-group-lg" align="left">
 					<label>Venue</label><br/>
@@ -56,7 +60,7 @@
 						</optgroup>
 					</select>
 					<div class="alert alert-danger" style="width: 100% float: left; text-align: center;
-    				vertical-align: middle; font-size: 24px; margin-top: 10px; display:none;"
+    				vertical-align: middle; font-size: 28px; margin-top: 10px; display:none;"
     				id="select-venue-dropdown-error">Error! You must select a venue.</div>
 				</div>
 				<hr/>
@@ -64,7 +68,10 @@
 				<div class="input-group input-group-lg">
 					<label>Alert tagline</label><br/>
 					<p>40 characters max</p>
-					<input type="text" name="description" maxlength="40"></textarea>
+					<input type="text" name="description" maxlength="40" id="add-alert-desc"></textarea>
+					<div class="alert alert-danger" style="width: 100% float: left; text-align: center;
+    				vertical-align: middle; font-size: 28px; margin-top: 10px; display:none;"
+    				id="alert-text-error">Error! You must input alert text.</div>
 				</div>
 
 				<hr/>
@@ -73,21 +80,22 @@
 					<label>Severity</label><br/>
 					<p>Report your problem or compliment.</p>
 					<div class="btn-group" data-toggle="buttons">					  
-						<label class="btn btn-danger" style="font-size:32px;">
+						<label class="btn btn-danger btn-menu" style="font-size:32px;">
 						    <input type="radio" name="severity" value = "danger" id="option1" > Severe
 						</label>
-						<label class="btn btn-warning " style="font-size:32px;">
+						<label class="btn btn-warning btn-menu" style="font-size:32px;">
 						    <input type="radio" name="severity" value = "warning" id="option2">Minor
 						</label>
-						<label class="btn btn-info " style="font-size:32px;">
+						<label class="btn btn-info btn-menu" style="font-size:32px;">
 						    <input type="radio" name="severity" value ="info" id="option3">FYI
 						</label>
-						<label class="btn btn-success " style="font-size:32px;">
+						<label class="btn btn-success btn-menu" style="font-size:32px;">
 						    <input type="radio" name="severity" value = "success" id="option4">Kudos
 						</label>
 					</div>
+					<p id="severity-chosen">(none chosen)</p>
 					<div class="alert alert-danger" style="width: 100% float: left; text-align: center;
-    				vertical-align: middle; font-size: 24px; margin-top: 10px; display:none;"
+    				vertical-align: middle; font-size: 28px; margin-top: 10px; display:none;"
     				id="select-venue-severity-error">Error! You must select one of the above buttons.</div>
 				</div>
 
@@ -107,8 +115,21 @@
 	<script>
 		console.log('{{venue}}');
 		var venue = '{{venue}}';
+		// problem w/ apostrophe
+		// Warning: massive hack but such is life sometimes
+		if (venue.indexOf("Gott") >= 0) {
+			venue = "Gott\'s";
+			$("#select-venue").val(venue);
+			return;
+		}
+		if (venue.indexOf("Jimmy") >= 0) {
+			venue = "Jimmy V\'s";
+			$("#select-venue").val(venue);
+			return;
+		}
+		console.log(venue);
 		if (venue != '')
-			$("#select-venue").val('{{venue}}');
+			$("#select-venue").val("{{venue}}");
 	</script>
 </body>
 </html>

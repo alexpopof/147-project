@@ -4,7 +4,7 @@
 <head>
 	<title>Home</title>	
 	<meta charset="utf-8">
-	
+
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -27,27 +27,32 @@
 <body>
 	<div class="container" align="center">
 		<div style="width: 100%; float: left; margin: 20px;">
-			<h1>Clutch</h1>
-			<p style = 'font-size: 26px;'>"keep businesses accountable"</p>
+			<h1 style = 'font-size: 80px'>Clutch</h1>
+			<p style = 'font-size: 46px;'>"keep businesses accountable"</p>
 		</div>
 
-		<a href="/addalerts" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add an Alert</a>
+		<div style="width: 100%; float: left; margin: 20px;">
+			<a href="/addalerts" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-flash"></i> Add an Alert</a>
 
 			<a href="/categories" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-star"></i> Edit Favorites</a>
 
 			<a href="/categories/explore" class="btn btn-primary btn-lg btn-text"><i class="glyphicon glyphicon-eye-open"></i> Explore Venues</a>
+		</div>
 
 
 		<div class="col-sm-4" align="center" style="width: 100%; float left; margin: 20px;">
 			<div class="list-group" align="center" id="home-alerts" style="box-shadow: 0 1px 2px rgba(0,0,0,0.6);">			
-			{{#if alerts.length}}	
+			{{#if alerts.length}}
+				<div style="margin: 20px; padding-top: 10px;">
+					<h1>Current Alerts</h1>					
+				</div>	
 				{{#each alerts}}
 				<a href="/alerts/{{venue}}" class="btn btn-{{severity}} alert" >
 					<div class = 'alert-venue'>{{venue}}</div>
 					<div class = 'alert-subtitle'  >"{{alert}}"</div>
 					<p class = 'alert-timestamp italic'>{{pretty_timestamp}}</p>
 					<!-- Will add closed or open tag here -->
-					<p class = 'alert-timestamp italic'>{{status}}</p>
+					<!--<p class = 'alert-timestamp italic'>{{status}}</p>-->
 				</a>
 				{{/each}}
 			{{else}}
