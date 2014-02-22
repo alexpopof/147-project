@@ -31,7 +31,7 @@ html, body {
      float: left; width: 95%; }
 
 .btn-text {
-     font-size: 30px;
+     font-size: 36px;
      margin: 5px;
 }
 
@@ -44,7 +44,7 @@ html, body {
 #home-alerts .alert {
     margin: 20px;
     height: 275px;
-    width: 90%;
+    width: 80%;
 
     text-align: center;
     vertical-align: center;
