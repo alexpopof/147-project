@@ -13,6 +13,7 @@ exports.view = function(req, res){
 
   	// check if just posted form in "edit favorites"
   	var faves = req.body.faves_list;
+  	console.log(faves);
 	var posted = false;
 	if (typeof faves != "undefined"){
 		var category = req.body.category.toLowerCase();

@@ -45,7 +45,7 @@
 			<div class="list-group" align="center" id="home-alerts" style="box-shadow: 0 1px 2px rgba(0,0,0,0.6);">			
 			{{#if alerts.length}}
 				<div style="margin: 20px; padding-top: 10px;">
-					<h1>Current Alerts</h1>					
+					<h1>Current Alerts for Your Favorite Venues</h1>					
 				</div>	
 				{{#each alerts}}
 				<a href="/alerts/{{venue}}" class="btn btn-{{severity}} alert" >
@@ -58,7 +58,7 @@
 				{{/each}}
 			{{else}}
 				<div style="width: 100%; float: left; margin: 20px;">
-					<h1>No Current Alerts</h1>					
+					<h1>No Alerts</h1>					
 				</div>
 			{{/if}}
 

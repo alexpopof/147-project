@@ -45,17 +45,29 @@
 						<option value = "default">Choose a venue ...</option>
 						<optgroup label = "Food">
 						{{#each food_venues}}
+							{{#if favorited}}
+							<option value = "{{name}}" style="color:#7f6b00;">{{name}}</option>
+							{{else}}
 							<option value = "{{name}}">{{name}}</option>
+							{{/if}}
 						{{/each}}
 						</optgroup>
 						<optgroup label = "Workout">
 						{{#each workout_venues}}
+							{{#if favorited}}
+							<option value = "{{name}}" style="color:#7f6b00;">{{name}}</option>
+							{{else}}
 							<option value = "{{name}}">{{name}}</option>
+							{{/if}}
 						{{/each}}
 						</optgroup>
 						<optgroup label = "Party">
 						{{#each party_venues}}
+							{{#if favorited}}							
+							<option value = "{{name}}" style="color:#7f6b00;">{{name}}</option>
+							{{else}}
 							<option value = "{{name}}">{{name}}</option>
+							{{/if}}
 						{{/each}}
 						</optgroup>
 					</select>

@@ -28,7 +28,7 @@
 	vertical-align: middle; font-size: 45px; margin: 10px; margin-bottom: 15px;"> Venues: {{category}} </div>
   <div style="width: 100% float left; text-align: center;
   vertical-align: middle; font-size: 28px; margin: 10px; margin-bottom: 15px;"> Click on a logo for more details about that venue. </div>
-  <div style="margin: 0 auto; width:90%; border:5px solid black; padding: 30px; font-size:24px;">
+  <div style="margin: 0 auto; width:95%; border:5px solid black; padding: 30px; font-size:24px;">
     <table cellpadding="8">
     {{#each data}}
     <tr>
@@ -37,16 +37,16 @@
           <img class = "img-thumb" src="{{imageURL}}" alt = '' style="float:left; margin-right: 10px; ">
         </a>
     </td>
-    <!--<td>
+    <td style="display: none;">
       <a href = "/alerts/{{name}}">
         <div>{{name}}</div>
       </a>
-    </td> -->
+    </td>
     <td>
       {{#if favorited}}
-       <a class="btn btn-primary btn remove-faves-btn " style="width: 450px; font-size: 32px;">Remove from Favorites</a>
+       <a class="btn btn-primary btn remove-faves-btn " style="width: 425px; font-size: 32px;">Remove from Favorites</a>
       {{else}}
-        <a class="btn btn-primary btn add-faves-btn " style="width: 450px; font-size: 32px;"><i class="glyphicon glyphicon-star"></i> Add to Favorites</a>
+        <a class="btn btn-primary btn add-faves-btn " style="width: 425px; font-size: 32px;"><i class="glyphicon glyphicon-star"></i> Add to Favorites</a>
       {{/if}}
 
     </td>

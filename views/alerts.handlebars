@@ -61,8 +61,9 @@
 			<a href="/" class="btn btn-primary btn-lg btn-text btn-home"><i class="glyphicon glyphicon-home"></i> Home</a>  
 		</div>
 		<div align="center" style="width: 100%; float left; margin: 20px;">
-			<!--<h1 style="font-size: 50px;" id="venue-title">{{venue}}</h1> -->
+			<h1 style="font-size: 50px; display: none;" id="venue-title">{{venue}}</h1>
 			<img src="{{imageURL}}" class="img"/><br/>
+			<p style="font-size: 36px;">Status: {{status}}</p>
 			<!--<h2>"{{description}}"</h2>-->
 			<!--<h3><span>Category: </span><span id="venue-category">{{category}}</span></h3>-->
 			<!--<h3>{{hours}}</h3>-->
@@ -84,7 +85,7 @@
 					<div class="alert alert-{{severity}} venue-alert">					
 						<div class = 'alert-venue-subtitle'>"{{alert}}"</div>
 						<p class = 'alert-timestamp italic'>{{pretty_timestamp}}</p>
-						<p class = 'alert-timestamp italic'>{{status}}</p>
+						<!--<p class = 'alert-timestamp italic'>{{status}}</p> -->
 					</div>
 					<a class="btn btn-primary btn-text alert-resolved"><i class="glyphicon glyphicon-remove"></i> Permanently Remove Alert</a>
 				</div>

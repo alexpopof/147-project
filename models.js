@@ -11,6 +11,8 @@ var VenueSchema = new Mongoose.Schema({
 	"telephone": String,
 	"hours": String,
 	"website": String,
+	"open": String,
+	"closed": String,
 	"latitude": String,
 	"longitude": String,
 	"category": String
