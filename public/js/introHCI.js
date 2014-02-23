@@ -102,6 +102,7 @@ function venueAddFave() {
 	btn.text(" Remove from Favorites");
 	btn.attr('id','venue-remove-fave');
 	btn.click(venueRemoveFave);
+	$('#venue-is-favorited').show();
 	$.post("/changefavorite", {"venue":venue, "category":cat, "newBoolean": true}, dummyFn);
 }
 
@@ -131,6 +132,7 @@ function venueRemoveFave() {
 	btn.prepend('<i class="glyphicon glyphicon-star"></i>')
 	btn.attr('id','venue-add-fave');
 	btn.click(venueAddFave);
+	$('#venue-is-favorited').hide();
 	$.post("/changefavorite", {"venue":venue, "category":cat, "newBoolean": false}, dummyFn);
 }
 

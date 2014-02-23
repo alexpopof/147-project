@@ -25,26 +25,28 @@
 	</div>
 
 	<div style="width: 100% float left; text-align: center;
-	vertical-align: middle; font-size: 40px; margin: 10px; margin-bottom: 15px;"> Venues: {{category}} </div>
+	vertical-align: middle; font-size: 45px; margin: 10px; margin-bottom: 15px;"> Venues: {{category}} </div>
+  <div style="width: 100% float left; text-align: center;
+  vertical-align: middle; font-size: 28px; margin: 10px; margin-bottom: 15px;"> Click on a logo for more details about that venue. </div>
   <div style="margin: 0 auto; width:90%; border:5px solid black; padding: 30px; font-size:24px;">
-    <table cellpadding="7">
+    <table cellpadding="8">
     {{#each data}}
     <tr>
-    <td>
+    <td style="text-align: center;">
         <a href = "/alerts/{{name}}">
-          <img class = "img" src="{{imageURL}}" alt = '' style="float:left; margin-right: 10px;">
+          <img class = "img-thumb" src="{{imageURL}}" alt = '' style="float:left; margin-right: 10px; ">
         </a>
     </td>
-    <td>
+    <!--<td>
       <a href = "/alerts/{{name}}">
         <div>{{name}}</div>
       </a>
-    </td>
+    </td> -->
     <td>
       {{#if favorited}}
-       <a class="btn btn-primary btn remove-faves-btn">Remove from Favorites</a>
+       <a class="btn btn-primary btn remove-faves-btn btn-text" style="width: 450px;">Remove from Favorites</a>
       {{else}}
-        <a class="btn btn-primary btn add-faves-btn"><i class="glyphicon glyphicon-star"></i> Add to Favorites</a>
+        <a class="btn btn-primary btn add-faves-btn btn-text" style="width: 450px;"><i class="glyphicon glyphicon-star"></i> Add to Favorites</a>
       {{/if}}
 
     </td>

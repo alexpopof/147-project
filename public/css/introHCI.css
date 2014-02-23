@@ -94,10 +94,14 @@ html, body {
 p.italic {font-style:italic;}
 
 .img {
-    height: 100px;
-    max-width: 175px;*/
+    height: 150px;
+    max-width: 275px;*/
 }
 
+.img-thumb {
+    height: 75px;
+    max-width: 175px;*/
+}
 
 
 /*.btn-info {
