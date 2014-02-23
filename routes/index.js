@@ -13,7 +13,7 @@ function include(arr,obj) {
 
 
 exports.view = function(req, res){
-	
+	var allBool = req.query.all == "true";
 	
 
 	function formatAMPM(date) {
@@ -88,10 +88,10 @@ exports.view = function(req, res){
 		var alerts_to_show = [];
 		for (var i = 0; i < alerts_db.length; i++) {
 			var venue_db = alerts_db[i]["venue"];
-			if (include(favorite_names, venue_db))
+			if (include(favorite_names, venue_db) || allBool)
 				alerts_to_show.push(alerts_db[i]);
 		}
-		res.render('index', {'alerts':alerts_to_show,});
+		res.render('index', {'alerts':alerts_to_show, 'all': allBool});
 	}
  	
 };
