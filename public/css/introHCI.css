@@ -94,13 +94,13 @@ html, body {
 p.italic {font-style:italic;}
 
 .img {
-    height: 150px;
+    height: 200px;
     max-width: 275px;*/
 }
 
 .img-thumb {
-    height: 75px;
-    max-width: 175px;*/
+    height: 150px;
+    max-width: 200px;*/
 }
 
 
