@@ -33,8 +33,6 @@ exports.view = function(req, res){
 	}
 
 	
-
-	
 	//if we are returning to the homepage from an added alert, must process form
 	var venue = req.body.venue;
 	var description = req.body.description;

@@ -18,6 +18,8 @@ mongoose.connect(database_uri);
 
 
 var index = require('./routes/index');
+var index_name = require('./routes/index_name'); // sort by name
+var index_severity = require('./routes/index_severity');
 
 var favorites = require('./routes/favorites');
 
@@ -58,6 +60,9 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.post('/', index.view);
+
+app.get('/index_name', index_name.view);
+app.get('/index_severity', index_severity.view);
 
 app.get('/favorites/:category', favorites.view);
 
