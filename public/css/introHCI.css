@@ -34,6 +34,10 @@ html, body {
      font-size: 36px;
      margin: 5px;
 }
+.btn-text-home {
+     font-size: 34px;
+     margin: 5px;
+}
 
 
 #home-alerts {
