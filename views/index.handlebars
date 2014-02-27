@@ -76,9 +76,15 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				</a>
 				{{/each}}
 			{{else}}
-				<div style="width: 100%; float: left; margin: 20px;">
-					<h1>No Current Alerts</h1>					
-				</div>
+				{{#if all}}
+					<div style="width: 100%; float: left; margin: 20px;">
+						<h1>No Current Alerts</h1>					
+					</div>
+				{{else}}
+					<div style="width: 100%; float: left; margin: 20px;">
+						<h1>No Current Alerts for Favorites</h1>					
+					</div>
+				{{/if}}
 			{{/if}}
 			{{#if all}}
 				<div style="width: 100%; float: left; margin: 20px;">
