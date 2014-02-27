@@ -17,7 +17,7 @@ function initializePage() {
 	$(".remove-faves-btn").click(removeFromFaves);
 	$("#venue-add-fave").click(venueAddFave);
 	$("#venue-remove-fave").click(venueRemoveFave);
-	ga("send", "event", "addAlert", "Action");
+	ga("send", "event", "addAlert", "click");
 }
 
 function alertFormListener() {
