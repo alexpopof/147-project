@@ -1,5 +1,7 @@
 'use strict';
 
+var startTime;
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -17,7 +19,10 @@ function initializePage() {
 	$(".remove-faves-btn").click(removeFromFaves);
 	$("#venue-add-fave").click(venueAddFave);
 	$("#venue-remove-fave").click(venueRemoveFave);
-	ga("send", "event", "addAlert", "click");
+	$("#user_test_form").submit(testFormSubmitted);
+	startTime = new Date().getTime();
+	$("#help_button").click(helpButtonPress);
+	$(window).scroll(scrollEvent);
 }
 
 function alertFormListener() {
@@ -135,5 +140,32 @@ function venueRemoveFave() {
 	btn.click(venueAddFave);
 	$('#venue-is-favorited').hide();
 	$.post("/changefavorite", {"venue":venue, "category":cat, "newBoolean": false}, dummyFn);
+}
+
+function helpButtonPress(e) {
+	console.log('help');
+	e.preventDefault();
+	$("#home-help-info").show();
+	ga("send", "event", "help_button", "click");
+}
+
+function scrollEvent() {
+	console.log('scroll');
+	ga("send", "event", "scrolling", "scroll");
+}
+
+function testFormSubmitted(e) {
+	e.preventDefault();
+	var answer = $("#answer_input").val();
+	if (answer.length <= 0) {
+		alert("Hey, you gotta answer the question");
+		return false;
+	}
+	ga('send', 'event', 'answer', answer);
+	var endTime = new Date().getTime();
+	var timeSpent = (endTime - startTime)/1000;
+	console.log(timeSpent);
+	ga('send', 'timing', 'jQuery', 'QuestionAnswered', timeSpent);
+	alert("Answer sumbitted. Thank you very much!");
 }
 

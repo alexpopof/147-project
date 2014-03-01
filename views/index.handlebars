@@ -41,6 +41,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 <body>
 	<div class="" align="center">
+		<div style="width: 100% float: right; margin: 50px;"> 
+			<a href="/" class="btn btn-primary btn-lg btn-text btn-home" id="help_button"><i class="glyphicon glyphicon-question-sign"></i> Help</a>  
+		</div>
+		<div class="alert alert-info" style="width: 80%; float: left; text-align: center;
+    				vertical-align: middle; font-size: 28px; margin-top: 10px; display:none; "
+    				id="home-help-info">
+    		The homepage shows current alerts for venues you've listed as your favorites.  For example, I might want to know if a certain restaurant is overcrowded or has a great special.  As the community keeps each other up to date on the current status of venues, we can keep businesses accountable.  Please look at the alerts below and when you are ready, answer the question at the bottom of the page.
+    	</div>
 		
 		<div style="width: 100%; float: left; margin: 20px;">
 			<h1 style = 'font-size: 80px'>Clutch</h1>
@@ -103,7 +111,12 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 						<span style="color: #419641">Compliment</span></br/>
 			</p>
 			</div>
-
+			<p style="font-size: 32px;"> USER TESTING: 1 QUESTION </p>
+			<form style="font-size: 32px;" id="user_test_form">
+				<p style="font-size: 32px;">How many alerts are currently posted for Starbucks?</p>
+				<input type="text" name="answer" id="answer_input">
+				<input type="submit" value="Submit" class="btn btn-primary btn-text"><br/>
+			</form>
 		</div>
 	</div>
 
@@ -116,7 +129,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-48471805-1', '147glance.herokuapp.com');
+	  ga('create', 'UA-48471805-1', 'cs147glance.herokuapp.com');
 	  ga('send', 'pageview');
 
 	</script>

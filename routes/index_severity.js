@@ -106,7 +106,7 @@ exports.view = function(req, res){
 				alerts_kudos.push(a);
 		}
 
-		var alerts_by_servity = alerts_severe.concat(alerts_minor).concat(alerts_fyi).concat(alerts_kudos);
+		var alerts_by_servity = alerts_severe.concat(alerts_kudos).concat(alerts_minor).concat(alerts_fyi);
 
 
 		res.render('index', {'alerts':alerts_by_servity, 'all': allBool});
