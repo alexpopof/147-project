@@ -22,6 +22,7 @@ function initializePage() {
 	$("#user_test_form").submit(testFormSubmitted);
 	startTime = new Date().getTime();
 	$("#help_button").click(helpButtonPress);
+	$("#home-help-info").click(removeHelpText);
 	$(window).scroll(scrollEvent);
 }
 
@@ -169,3 +170,6 @@ function testFormSubmitted(e) {
 	alert("Answer sumbitted. Thank you very much!");
 }
 
+function removeHelpText() {
+	$("#home-help-info").hide();
+}

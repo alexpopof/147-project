@@ -69,14 +69,14 @@ exports.view = function(req, res){
 
 
 	else {
-		models.Alert.find().sort('-timestamp').exec(renderIndex);
+		models.Alert.find().sort('severity').exec(renderIndex);
 	}
 
 	function afterSave(err) {
 
 		if(err) {console.log(err); res.send(500); }
 		console.log('getting alerts from db');
-		models.Alert.find().sort('-timestamp').exec(renderIndex);
+		models.Alert.find().sort('severity').exec(renderIndex);
 	}
 
 
@@ -89,9 +89,27 @@ exports.view = function(req, res){
 			if (include(favorite_names, venue_db) || allBool)
 				alerts_to_show.push(alerts_db[i]);
 		}
-		res.render('index', {'alerts':alerts_to_show, 'all': allBool});
+		alerts_severe = [];
+		alerts_minor = [];
+		alerts_fyi = [];
+		alerts_kudos = [];
+		for (var i = 0; i < alerts_to_show.length; i++) {
+			var a = alerts_to_show[i]
+			var severity = a["severity"];
+			if (severity == "danger")
+				alerts_severe.push(a);
+			if (severity == "warning")
+				alerts_minor.push(a);
+			if (severity == "info")
+				alerts_fyi.push(a);
+			if (severity == "success")
+				alerts_kudos.push(a);
+		}
+
+		var alerts_by_servity = alerts_severe.concat(alerts_kudos).concat(alerts_minor).concat(alerts_fyi);
+
+
+		res.render('index', {'alerts':alerts_by_servity, 'all': allBool});
 	}
  	
 };
-
-
