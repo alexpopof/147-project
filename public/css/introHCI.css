@@ -48,7 +48,7 @@ html, body {
 #home-alerts .alert {
     margin: 20px;
     height: 275px;
-    width: 80%;
+    width: 90%;
 
     text-align: center;
     vertical-align: center;
@@ -79,7 +79,7 @@ html, body {
 
 #home-alerts .alert-venue-subtitle {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 36px;
 }
 
 #home-alerts .alert-timestamp {
