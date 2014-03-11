@@ -27,7 +27,7 @@ html, body {
      padding: 10px; float: left; margin-right: 20px;
      border: 5px solid black; width: 100%; min-height: 120px; }
   #sortable2 {float: right;}
-  #sortable1 li, #sortable2 li { margin: 20px 15px 15px 20px; padding: 25px; font-size: 36px; 
+  #sortable1 li, #sortable2 li { margin: 20px 15px 15px 5px; padding: 25px; font-size: 36px; 
      float: left; width: 95%; }
 
 .btn-text {
@@ -62,7 +62,7 @@ html, body {
     margin-left: 10%;
     margin-right: 10%;
     height: 175px;
-    width: 90%;
+    width: 80%;
     text-align: center;
     vertical-align: center;        
 }
